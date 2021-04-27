@@ -1,0 +1,78 @@
+/* CSS Filters */
+.filter-blur {
+	-webkit-filter: blur(5.65px);
+	filter: blur(5.65px);
+}
+
+.filter-brightness {
+	-webkit-filter: brightness(150%);
+	filter: brightness(150%);
+}
+
+.filter-contrast {
+	-webkit-filter: contrast(150%);
+	filter: contrast(150%);
+}
+
+.filter-invert {
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+}
+
+.filter-sepia {
+	-webkit-filter: sepia(100%);
+	filter: sepia(100%);
+}
+
+.filter-grayscale {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.filter-desaturate {
+	-webkit-filter: saturate(47%);
+	filter: saturate(47%);
+}
+
+.filter-drop-shadow {
+	-webkit-filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+	filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* Helpers resize */
+.is-16x16 {
+	height: 16px;
+	width: 16px;
+}
+.is-24x24 {
+	height: 24px;
+	width: 24px;
+}
+.is-32x32 {
+	height: 32px;
+	width: 32px;
+}
+.is-48x48 {
+	height: 48px;
+	width: 48px;
+}
+.is-64x64 {
+	height: 64px;
+	width: 64px;
+}
+.is-96x96 {
+	height: 96px;
+	width: 96px;
+}
+.is-128x128 {
+	height: 128px;
+	width: 128px;
+}
+.is-256x256 {
+	height: 256px;
+	width: 256px;
+}
+.is-512x512 {
+	height: 512px;
+	width: 512px;
+}

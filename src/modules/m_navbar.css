@@ -1,0 +1,61 @@
+/* Navbar
+   ========================================================================== */
+
+.navbar {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1rem;
+	padding: 0 1rem;
+}
+.navbar > * {
+	align-self: center;
+}
+.navbar-menu,
+.navbar-burger {
+	justify-self: end;
+}
+.navbar-brand {
+	font-size: 1.75rem;
+	line-height: 1.75rem;
+	margin: 0;
+	padding: 0.5rem 0;
+}
+.navbar-menu {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: calc(-100vh - 100%);
+	right: 0;
+	margin: 0;
+	padding: 3rem;
+	width: 100%;
+	z-index: 100;
+	will-change: top;
+	transition: top ease-in-out 0.25s;
+	text-align: center;
+}
+.navbar-burger,
+.navbar-brand {
+	z-index: 200;
+}
+.navbar-menu a {
+	padding: 0.75rem;
+	width: 100%;
+	display: inline-block;
+}
+.navbar-burger:checked ~ .navbar-menu {
+	top: 0;
+}
+@media screen and (min-width: 44rem) {
+	.navbar-burger {
+		display: none !important;
+	}
+	.navbar-menu {		
+		flex-direction: row;
+		position: relative;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+}

@@ -1,0 +1,26 @@
+.tab {
+	display: inline-block;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	color: currentColor; 
+	/*border-bottom: 1px solid currentColor;*/
+	opacity: 0.6;
+}
+
+.tab:hover,
+.tab:active,
+.tab:focus {
+	box-shadow: inset 0 -2px 0 0 var(--primary-color, #0071AD);
+	/*border-bottom: 1px solid var(--primary-color, #0071AD);*/
+	opacity: 1;
+}
+
+.tab-input:checked + .tab {
+	color: var(--primary-color, #0071AD);
+	box-shadow: inset 0 -2px 0 0 var(--primary-color, #0071AD);
+	opacity: 1;
+}
+
+.tab-panel {
+}

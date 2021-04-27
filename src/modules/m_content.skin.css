@@ -1,0 +1,20 @@
+/* Links */
+.content a:not(.button)::after {
+	border-top: 0.1em solid var(--blue-color, #0071AD);
+	content: "";
+	position: absolute;
+	right: 100%;
+	left: 0;
+	bottom: 0.1em;
+	transition: right 0.4s cubic-bezier(0,0.5,0,1);	
+}
+
+.content a:not(.button):hover,
+.content a:not(.button):focus {
+	text-decoration: none;
+}
+
+.content a:not(.button):hover::after,
+.content a:not(.button):focus::after {
+	right: 0;
+}

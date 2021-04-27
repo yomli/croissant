@@ -1,0 +1,49 @@
+/* Images
+   ========================================================================== */
+
+/* Responsive image as opt-in
+If applied to all images, it breaks third-party widgets.
+See https://github.com/twbs/bootstrap/issues/18178 */
+.fit {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Thumbnail image */
+.thumbnail {
+	max-width: 100%;
+	height: auto;
+	padding: 0.25rem;
+	background-color: var(--background-color-close, #FFFFFF);
+	border: 1px solid var(--background-color-far, #E1E1E1);
+	border-radius: 0.25rem;
+}
+
+/* See https://archive.hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/ */
+.full-bleed {
+	width: 100vw;
+	height: auto;
+	margin-left: 50%;
+	transform: translateX(-50%);	
+}
+
+/* Figures
+   ========================================================================== */
+   
+figure,
+.figure {
+	display: inline-block; /* Ensures the caption's text aligns with the image. */
+}
+
+figure img,
+.figure-img {
+	margin-bottom: 0.5rem;
+	line-height: 1;
+}
+
+figcaption,
+.figure-caption {
+	font-size: 90%;
+	color: currentColor;
+	opacity: 0.6;
+}

@@ -1,0 +1,42 @@
+/* Code
+   ========================================================================== */
+
+/* Inline code */
+code {
+	color: var(--green-color, #e83e8c);
+	word-break: break-word;
+}
+
+a > code {
+	color: inherit;
+}
+
+/* Block code */
+
+pre {
+	color: currentColor;
+	overflow: auto;
+	white-space: pre-wrap;
+}
+
+pre code {
+	font-size: inherit;
+	color: inherit;
+	word-break: normal;
+}
+
+/* Keyboard */
+kbd {
+	padding: 0.2rem 0.4rem;
+	color: #444;
+	background-color: var(--kbd-background-color, #F7F7F7);
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 0 2px var(--background-color-close, #FFFFFF) inset;
+	border-radius: 0.2rem;
+}
+
+kbd kbd {
+	padding: 0;
+	font-size: 100%;
+	background: none;
+	box-shadow: none;
+}

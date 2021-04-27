@@ -1,0 +1,53 @@
+.uppercase { 
+ 	text-transform: uppercase; 
+}
+
+ /* When a text is made all capitals, 
+	upper characters are lowercase. 
+	e.g. Mᵐᵉ DE SÉVIGNÉ */
+.uppercase sup { 
+ 	text-transform: lowercase; 
+}
+
+.underline { 
+ 	text-decoration: underline; 
+}
+
+.small-caps,
+.smallcaps {
+ 	font-variant: small-caps;
+}
+
+.all-small-caps {
+	/* Old browsers */
+	/* text-transform: lowercase; 
+ 	font-variant: small-caps; */
+	font-variant: all-small-caps;
+}
+
+.initialism {
+	font-size: 90%;
+	text-transform: uppercase;
+}
+
+.hyphens {
+ 	-webkit-hyphens: auto;
+ 	-ms-hyphens: auto;
+ 	hyphens: auto;
+}
+
+.font-serif {
+	font-family: var(--font-serif);
+}
+
+.font-sans {
+	font-family: var(--font-sans);
+}
+
+.font-monospace {
+	font-family: var(--font-monospace);
+}
+
+.font-system {
+	font-family: var(--font-system);
+}

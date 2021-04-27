@@ -1,0 +1,105 @@
+/* Headings
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-bottom: 0.5rem;
+	font-weight: 400; /* Size matters. */
+	line-height: 1.2;
+}
+
+h1, .h1 { font-size: 2.5rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; font-weight: 500; }
+
+
+/* Horizontal rules
+   ========================================================================== */
+
+hr {
+	margin: 1rem auto;
+	border: 0;
+	border-top: 1px solid currentColor;
+	opacity: 0.5;
+}
+
+/* Font styles
+   ========================================================================== */
+
+b,
+strong,
+.bold { 
+	font-weight: 600; 
+}
+
+.regular { 
+	font-weight: normal; 
+}
+
+.italic { 
+	font-style: italic; 
+}
+
+/* Emphasis
+   ========================================================================== */
+
+small,
+.small {
+	font-size: 80%;
+	font-weight: 400;
+}
+
+mark,
+.mark {
+	padding: 0.2em;
+	background-color: var(--mark-color, #FCF8E3);
+}
+
+
+/* Lists
+   ========================================================================== */
+
+.list-unstyled,
+.list-inline {
+	padding-left: 0;
+	list-style: none;
+}
+
+.list-inline li {
+	display: inline-block;
+}
+
+.list-inline li:not(:last-child) {
+	margin-right: 0.5rem;
+}
+
+/* Blockquotes & quotes
+   ========================================================================== */
+
+blockquote,
+.blockquote {
+    font-size: 1.25rem;
+}
+
+blockquote footer,
+.blockquote-footer {
+	display: block;
+	font-size: 80%;
+	color: currentColor;
+	opacity: 0.6;
+}
+
+blockquote footer::before,
+.blockquote-footer::before {
+	content: '—\a0';
+}
+
+/* Quotes */
+q::before { content: open-quote; }
+q::after { content: close-quote; }
+
+q, q:lang(en) { quotes: '“' '”' '‘' '’'; }
+q:lang(fr) { quotes: '«\a0' '\a0»' '“\a0' '\a0”'; } /* Always a non-breakable space before a double punctuation in French. */

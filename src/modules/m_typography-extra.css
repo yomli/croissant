@@ -1,0 +1,58 @@
+/* List styles */
+
+ul.list-custom {
+	list-style: var(--type);
+}
+
+ul.list-custom ul {
+	list-style: inherit;
+}
+
+ol.list-custom {
+	list-style: none;
+	padding-left: 1.5rem;
+	counter-reset: list;
+}
+
+ol.list-custom li::before {
+	content: counter(list, var(--type, decimal)) var(--sep) '\a0';
+	counter-increment: list;
+}
+
+/* Asterism
+	See https://en.wikipedia.org/wiki/Asterism_(typography) */
+.asterism {
+	margin-bottom: 3rem;
+	background: transparent;
+	border: none;
+	color: currentColor;
+	opacity: 0.5;
+}
+
+.asterism::before {
+	content: '\2042'; /* UTF8 asterism */
+	display: block;
+	text-align: center;
+	font-family: serif;
+	font-size: 2rem;
+}
+
+/* Censored text */
+.censored, 
+.censored > * {
+	/* background-color: currentColor; */
+	background-color: rgba(0,0,0,0.8);
+	color: transparent;
+	cursor: zoom-in;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	touch-action: manipulation;
+}
+
+.censored:hover, 
+.censored:focus { 
+	background-color: transparent;
+	color: inherit;
+}

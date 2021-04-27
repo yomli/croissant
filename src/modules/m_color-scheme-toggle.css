@@ -1,0 +1,15 @@
+/* Color Scheme Toggle
+   ========================================================================== */
+
+.color-scheme-toggle {
+	background: transparent var(--icon-color-scheme) no-repeat center center;
+}
+
+.color-scheme-toggle:hover,
+.color-scheme-toggle:focus {
+	/* hsl value from starting point of sepia : hsl(54, 15%, 57%) */
+	/* See https://css-tricks.com/solved-with-css-colorizing-svg-backgrounds/ */
+	filter: brightness(0.75) sepia(1) saturate(5); /* Yellow */
+	/* filter: brightness(0.43) sepia(1) saturate(2.2) hue-rotate(79deg); /* Green */
+	outline: 0;
+}

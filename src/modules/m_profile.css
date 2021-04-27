@@ -1,0 +1,39 @@
+/* Module : Profile
+
+   <figure class="profile-picture">
+       <img src="profile.png" class="avatar">
+       <figcaption class="profile-handle">yomli</figcaption>
+   </figure>
+
+   <p class="profile-bio">Some bio.</p>
+
+   <ul class="list-unstyled profile-links">
+       <li><a href="" title="" class="">Email</a></li>
+       <li><a href="" title="" class="">Twitter</a></li>
+       <li><a href="" title="" class="">Facebook</a></li>
+   </ul>
+   
+   ========================================================================== */
+
+.profile-picture {
+	text-align: center;
+	width: 100%;
+}
+
+.profile-picture .avatar {
+	width: 10rem;
+	height: 10rem;
+}
+
+.profile-handle {
+	font-size: 1.25rem;
+	font-weight: 500;
+	color: inherit;
+}
+
+.profile-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+}

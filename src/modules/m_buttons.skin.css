@@ -1,0 +1,129 @@
+.button,
+button,
+[type="submit"],
+[type="reset"],
+[type="button"],
+[type="image"] {
+	background: var(--button-color, #E1E1E1);
+	color: currentColor;
+	border: none;
+	border-radius: 3px;
+	/*text-transform: uppercase;*/
+}
+
+.button:hover,
+button:hover,
+[type="submit"]:hover,
+[type="reset"]:hover,
+[type="button"]:hover,
+[type="image"]:hover,
+.button:focus,
+button:focus,
+[type="submit"]:focus,
+[type="reset"]:focus,
+[type="button"]:focus,
+[type="image"]:focus {
+	-webkit-filter: saturate(95%) brightness(105%);
+	filter: saturate(95%) brightness(105%);
+	color: currentColor;
+	text-decoration: none;
+}
+
+.button:active,
+button:active,
+[type="submit"]:active,
+[type="reset"]:active,
+[type="button"]:active,
+[type="image"]:active {
+	-webkit-filter: brightness(115%);
+	filter: brightness(115%);
+	box-shadow: none !important;
+}
+
+.button.disabled,
+button:disabled,
+[type="submit"]:disabled,
+[type="reset"]:disabled,
+[type="button"]:disabled,
+[type="image"]:disabled {
+	opacity: 0.6;
+}
+
+.button.is-primary,
+button.is-primary,
+[type="submit"].is-primary,
+[type="reset"].is-primary,
+[type="button"].is-primary,
+[type="image"].is-primary  {
+	background: var(--primary-color, #0071AD);
+	color: #FFFFFF;
+}
+
+.button.is-accent,
+button.is-accent,
+[type="submit"].is-accent,
+[type="reset"].is-accent,
+[type="button"].is-accent,
+[type="image"].is-accent  {
+	background: var(--accent-color, #FFC200);
+	color: #FFFFFF;
+}
+
+.button.is-danger,
+button.is-danger,
+[type="submit"].is-danger,
+[type="reset"].is-danger,
+[type="button"].is-danger,
+[type="image"].is-danger {
+	background: var(--danger-color, #DE2A2A);
+	color: #FFFFFF;
+}
+
+.button.is-alert,
+button.is-alert,
+[type="submit"].is-alert,
+[type="reset"].is-alert,
+[type="button"].is-alert,
+[type="image"].is-alert {
+	background: var(--alert-color, #C44F0C);
+	color: #FFFFFF;
+}
+
+.button.is-success,
+button.is-success,
+[type="submit"].is-success,
+[type="reset"].is-success,
+[type="button"].is-success,
+[type="image"].is-success {
+	background: var(--success-color, #5C7E28);
+	color: #FFFFFF;
+}
+
+.button--flat {
+	background: transparent !important;
+}
+
+.button--flat:hover,
+.button--flat:focus {
+	background: var(--background-color-far, lightgrey) !important;
+}
+
+.button--flat.is-primary {
+	color: var(--primary-color, #0071AD);
+}
+
+.button--flat.is-accent {
+	color: var(--accent-color, #FFC200);
+}
+
+.button--flat.is-danger {
+	color: var(--danger-color, #DE2A2A);
+}
+
+.button--flat.is-alert {
+	color: var(--alert-color, #C44F0C);
+}
+
+.button--flat.is-success {
+	color: var(--success-color, #5C7E28);
+}

@@ -1,0 +1,50 @@
+/* Module : Scroller
+
+   <div class="scroller">
+   	   <a href="#" class="scroller-link" role="button" aria-label="Back to top"></a>
+   </div>
+   
+   ========================================================================== */
+
+.layout { /* parent of scroller, ie body */
+	position: relative;
+}
+.scroller {
+	position: absolute;
+	top: 100vh;
+	right: 1rem;
+	bottom: 0;
+	width: 2.5rem;
+	z-index: 9999;
+	pointer-events: none;
+	/* Clip when there is too little content */
+	/* Clip is deprecated but clip-path doesn't works */
+	/*clip-path: inset(0 0 0 0); */
+	clip: rect(0, 2.5rem, auto, 0);
+}
+.scroller-link {
+	position: fixed; /* Fallback */
+	position: sticky;
+	top: calc(100vh - 3.5rem); /* positionning using height + .scroller right */
+	pointer-events: all;
+	cursor: pointer;
+
+	display: block;
+	background: var(--primary-color) var(--icon-scroller) no-repeat center center;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+.scroller-link:hover,
+.scroller-link:focus {
+	-webkit-filter: saturate(95%) brightness(105%);
+	filter: saturate(95%) brightness(105%);
+}
+.scroller-link:active {
+	-webkit-filter: brightness(115%);
+	filter: brightness(115%);
+}
+@media print {
+	.scroller {
+		display: none !important;
+	}
+}
