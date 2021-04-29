@@ -4,7 +4,8 @@
 /* Inline code */
 code {
 	color: var(--green-color, #e83e8c);
-	word-break: break-word;
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 a > code {
@@ -16,13 +17,14 @@ a > code {
 pre {
 	color: currentColor;
 	overflow: auto;
-	white-space: pre-wrap;
+	white-space: pre;
 }
 
 pre code {
 	font-size: inherit;
 	color: inherit;
-	word-break: normal;
+	overflow-wrap: normal;
+	white-space: pre;
 }
 
 /* Keyboard */
@@ -40,3 +42,4 @@ kbd kbd {
 	background: none;
 	box-shadow: none;
 }
+
