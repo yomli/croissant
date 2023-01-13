@@ -1,7 +1,7 @@
 /*!
  * Rebase
  * Normalization of HTML elements
- * Forked from Bootstrap Reboot, licensed MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) 
+ * Forked from Bootstrap Reboot, licensed MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 /* Document
@@ -16,6 +16,12 @@
 @media (prefers-reduced-motion: no-preference) {
 	:root {
 		scroll-behavior: smooth;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none;
 	}
 }
 
@@ -84,14 +90,13 @@ abbr[title] {
 	cursor: inherit;
 }
 
-abbr[title]::after { 
-	content: ' ('attr(title)') '; 
+abbr[title]::after {
+	content: ' ('attr(title)') ';
 }
 
 @media screen and (min-width: 1025px) {
 	abbr[title],
 	abbr[data-original-title] {
-		text-decoration: underline;
 		-webkit-text-decoration: underline dotted;
 		text-decoration: underline dotted;
 		cursor: help;
@@ -100,7 +105,7 @@ abbr[title]::after {
 	}
 	abbr[title]::after {
 		content: '';
-	}	
+	}
 }
 
 
@@ -170,26 +175,16 @@ a {
 	text-decoration: none;
 }
 
-a:not([class]):hover { /* Style global links without styling elements links */
-	text-decoration: underline;
-}
-
-a:not([href]):not([tabindex]),
-a:not([href]):not([class]) {
-	color: inherit;
-	text-decoration: none;
-}
-
-a:not([href]):not([tabindex]):hover, 
-a:not([href]):not([tabindex]):focus,
+a:not([href]):not([class]),
 a:not([href]):not([class]):hover,
 a:not([href]):not([class]):focus {
 	color: inherit;
 	text-decoration: none;
 }
 
-a:not([href]):not([tabindex]):focus {
-	outline: 0;
+a:not([class]):hover,
+a:not([class]):focus { /* Style global links without styling elements links */
+	text-decoration: underline;
 }
 
 /* Code
@@ -201,21 +196,37 @@ kbd,
 samp {
 	font-family: SFMono-Regular, Menlo, "DejaVu Sans Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	font-size: 87.5%;
-	direction: ltr /* rtl:ignore */;
-	unicode-bidi: bidi-override;
 }
 
 pre {
+	color: currentColor;
 	display: block;
 	margin-top: 0;
 	margin-bottom: 1rem;
 	overflow: auto;
+	white-space: pre;
+}
+
+pre code { /* Account for some code outputs that place code tags in pre tags */
+	font-size: inherit;
+	color: inherit;
+	word-break: normal;
+	white-space: pre;
+}
+
+code {
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+a > code { /* Streamline the style when inside anchors to avoid broken underline and more */
+	color: inherit;
 }
 
 /* Figures
    ========================================================================== */
 
-figure {
+figure { /* Apply a consistent margin strategy (matches our type styles) */
 	margin: 0 0 1rem;
 }
 
@@ -241,7 +252,7 @@ svg {
 /* Tables
    ========================================================================== */
 
-table {
+table { /* Prevent double borders */
 	border-collapse: collapse;
 	caption-side: bottom;
 }
@@ -254,25 +265,23 @@ caption {
 }
 
 th {
-	text-align: inherit;
-	text-align: -webkit-match-parent;
+	text-align: inherit; /* Matches default `<td>` alignment by inheriting `text-align` */
+	text-align: -webkit-match-parent; /* Fix alignment for Safari */
 }
 
 /* Forms
    ========================================================================== */
 
 label {
-	display: inline-block;
-	/*margin-bottom: 0.5rem;*/
+	display: inline-block; /* Allow labels to use `margin` for spacing */
 }
 
 button {
-	border-radius: 0;
+	border-radius: 0; /* Remove the default `border-radius` that macOS Chrome add */
 }
 
-button:focus {
-	outline: 1px dotted;
-	outline: 5px auto -webkit-focus-ring-color;
+button:focus:not(:focus-visible) { /* Remove the default `border-radius` that macOS Chrome add */
+	outline: 0;
 }
 
 input,
@@ -280,7 +289,7 @@ button,
 select,
 optgroup,
 textarea {
-	margin: 0;
+	margin: 0; /* Remove the margin in Firefox and Safari */
 	font-family: inherit;
 	font-size: inherit;
 	font-style: inherit;
@@ -288,16 +297,21 @@ textarea {
 }
 
 button,
-select {
+select { /* Remove the inheritance of text transform in Firefox */
 	text-transform: none;
 }
 
-select {
+select { /* Remove the inheritance of word-wrap in Safari */
 	word-wrap: normal;
 }
 
-[list]::-webkit-calendar-picker-indicator {
-	display: none;
+select:disabled { /* Undo the opacity change from Chrome */
+  opacity: 1;
+}
+
+/* Remove the dropdown arrow only from text type inputs built with datalists in Chrome */
+[list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator {
+  display: none !important;
 }
 
 :disabled {
@@ -311,7 +325,7 @@ button,
 [type="reset"],
 [type="submit"],
 [type="image"] {
-	-webkit-appearance: button;
+	-webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
 }
 
 [role=button],
@@ -320,15 +334,15 @@ button:not(:disabled),
 [type="reset"]:not(:disabled),
 [type="submit"]:not(:disabled),
 [type="image"]:not(:disabled) {
-	cursor: pointer;
+	cursor: pointer; /* Add "hand" cursor to non-disabled button elements */
 }
 
-::-moz-focus-inner {
+::-moz-focus-inner { /* Remove inner border and padding from Firefox */
 	padding: 0;
 	border-style: none;
 }
 
-textarea {
+textarea { /* Textareas should really only resize vertically */
 	overflow: auto;
 	resize: vertical;
 }
@@ -364,7 +378,7 @@ progress {
 ::-webkit-datetime-edit-day-field,
 ::-webkit-datetime-edit-month-field,
 ::-webkit-datetime-edit-year-field {
-	padding: 0;
+	padding: 0; /* Fix height of inputs with a type of datetime-local, date, month, week, or time */
 }
 
 ::-webkit-inner-spin-button {
@@ -372,25 +386,22 @@ progress {
 }
 
 [type="search"] {
-	outline-offset: -2px;
-	-webkit-appearance: textfield;
+	outline-offset: -2px; /* Correct the outline style in Safari */
+	-webkit-appearance: textfield; /* This overrides the extra rounded corners on search inputs in iOS */
 }
 
 ::-webkit-search-decoration {
-	-webkit-appearance: none;
+	-webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
 }
 
 ::-webkit-color-swatch-wrapper {
-	padding: 0;
+	padding: 0; /* Remove padding around color pickers in webkit browsers */
 }
 
-::file-selector-button {
-	font: inherit;
-}
-
+::file-selector-button,
 ::-webkit-file-upload-button {
-	font: inherit;
-	-webkit-appearance: button;
+	font: inherit; /* Inherit font family and line height for file input buttons */
+	-webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
 }
 
 /* Interactive
@@ -405,21 +416,15 @@ iframe {
 }
 
 summary {
-	display: list-item;
+	display: list-item; /* Add the correct display in all browsers */
 	cursor: pointer;
 }
 
-main {
-	display: block;
+progress {
+	vertical-align: baseline; /* Add the correct vertical alignment in Chrome, Firefox, and Opera */
 }
- 
+
 [hidden]
 .hidden {
   display: none !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	* {
-		animation: none;
-	}
 }

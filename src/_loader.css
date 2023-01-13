@@ -1,7 +1,7 @@
 /* root */
-@import '_rebase_2020.css';
+@import '_rebase.css';
 @import '_variables.css';
-@import './_helpers.css';
+@import '_helpers.css';
 
 /* base */
 @import url(./base/b_base.css);
@@ -9,41 +9,23 @@
 @import url(./base/b_images.css);
 @import url(./base/b_code.css);
 
-/* layouts */
-/*@import url(./layouts/l_footer.css);
-@import url(./layouts/l_header.css);
-@import url(./layouts/l_footer--company.css);
-@import url(./layouts/l_main--profile-page.css);*/
-
 /* modules */
-/*@import url(./modules/m_forms.css);
-@import url(./modules/m_typography-extra.css);
-@import url(./modules/m_tabs.css);
-@import url(./modules/m_tabs.skin.css);
-@import url(./modules/m_navbar.css);
-@import url(./modules/m_navbar--burgers.css);
-@import url(./modules/m_navbar.skin.css);
-@import url(./modules/m_navbar--burgers.skin.css);
-@import url(./modules/m_buttons.css);
-@import url(./modules/m_buttons.skin.css);*/
+ @import url(./modules/m_buttons.css); 
+ @import url(./modules/m_buttons.skin.css); 
+/* @import url(./modules/m_color-scheme-toggle.css); */
+/* @import url(./modules/m_content.skin.css); */
+/* @import url(./modules/m_flexbox-grid.css); */
+/* @import url(./modules/m_forms.css); */
+/* @import url(./modules/m_navbar-burgers.css); */
+/* @import url(./modules/m_navbar.css); */
+/* @import url(./modules/m_navbar.skin.css); */
+/* @import url(./modules/m_profile.css); */
+ @import url(./modules/m_scroller.css); 
+/* @import url(./modules/m_tabs.css); */
+/* @import url(./modules/m_tabs.skin.css); */
+/* @import url(./modules/m_typography-extra.css); */
 
-/*@import url(./modules/m_typography-extra.css);*/
 /* utilities */
-/*@import url(./utilities/u_images.css);
-@import url(./utilities/u_typography.css);
-@import url(./utilities/u_flexbox.css);*/
-
-
-/*@import url(./modules/m_flexbox-grid.css);*/
-@import url(./modules/m_navbar_2021.css);
-@import url(./modules/m_navbar_2021.skin.css);
-@import url(./modules/m_navbar-burgers.css);
-/*@import url(./modules/m_profile.css);*/
-@import url(./modules/m_buttons.css);
-@import url(./modules/m_buttons.skin.css);
-/*@import url(./modules/m_tabs.css);
-@import url(./modules/m_tabs.skin.css);*/
-@import url(./modules/m_color-scheme-toggle.css);
-@import url(./modules/m_scroller.css);
-
-@import url(./modules/m_forms.css);
+/* @import url(./utilities/u_images.css); */
+/* @import url(./utilities/u_typography.css); */
+/* @import url(./utilities/u_flexbox.css);*/

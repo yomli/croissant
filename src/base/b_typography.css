@@ -31,16 +31,16 @@ hr {
 
 b,
 strong,
-.bold { 
-	font-weight: 600; 
+.bold {
+	font-weight: 600;
 }
 
-.regular { 
-	font-weight: normal; 
+.regular {
+	font-weight: normal;
 }
 
-.italic { 
-	font-style: italic; 
+.italic {
+	font-style: italic;
 }
 
 /* Emphasis
@@ -55,7 +55,7 @@ small,
 mark,
 .mark {
 	padding: 0.2em;
-	background-color: var(--mark-color, #FCF8E3);
+	background-color: var(--mark-color);
 }
 
 

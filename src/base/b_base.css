@@ -5,18 +5,11 @@
 
 body {
 	overflow-x: hidden;
-	color: var(--main-color, rgba(0,0,0,0.8));
-	background-color: var(--background-color, #fafafa);
+	color: var(--main-color);
+	background-color: var(--background-color);
 }
 
 a {
-	color: var(--primary-color, #0071AD);
+	color: var(--primary-color);
 	text-decoration: none;
-	/*position: relative;*/ /* .stretched-link doesn't work with position: relative */ 
-}
-
-/* Style global links without styling elements links */
-a:not([class]):hover,
-a:not([class]):focus {
-	text-decoration: underline;
 }
