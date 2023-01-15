@@ -1,12 +1,20 @@
+/* Module : content
+
+   ========================================================================== */
+
 /* Links */
+.content a:not(.button) {
+	position: relative;
+}
+
 .content a:not(.button)::after {
-	border-top: 0.1em solid var(--blue-color, #0071AD);
+	border-top: 0.1em solid var(--primary-color, #0071AD);
 	content: "";
 	position: absolute;
 	right: 100%;
 	left: 0;
 	bottom: 0.1em;
-	transition: right 0.4s cubic-bezier(0,0.5,0,1);	
+	transition: right 0.4s cubic-bezier(0,0.5,0,1);
 }
 
 .content a:not(.button):hover,
