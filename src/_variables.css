@@ -6,80 +6,12 @@
 	--font-serif:  Georgia, Times, "Times New Roman", serif;
 	--font-monospace: "Source Code Pro", "Roboto Mono", Cousine, Menlo, Consolas, Courier, monospace;
 
-	--selection-color: rgba(73,146,89,.5);
-
-	--icon-chevron-up: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>');
-	--icon-scroller: var(--icon-chevron-up);
+	--selection-color: rgba(0,113,173,.3);
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		/* AA compliant color palette */
-		/* See https://identity.ucsf.edu/print-digital/digital-colors */
-		--background-color: #FAFAFA; /* Pure-white background is an issue for dyslexics */
-		--main-color: rgba(0,0,0,0.8); /* Body text on screen is dark grey rather than black and opacity remains legible with background changes */
-
-		/* Shades */
-		/* See https://javisperez.github.io/tailwindcolorshades/ */
-		--background-color-far: #E1E1E1;
-		--background-color-close: #FFFFFF;
-
-		/* Color safe on white */
-		--blue-color: #0071AD;
-		--yellow-color: #FFC200; /* Do not use with text */
-		--red-color: #DE2A2A;
-		--orange-color: #C44F0C;
-		--green-color: #41814F;
-
-		/* Elements colors */
-		--button-color: #E1E1E1;
-		--mark-color: #FCF8E3;
-		--kbd-background-color: #F7F7F7;
-
-		/* Palette */
-		--primary-color: var(--blue-color);
-		--accent-color: var(--yellow-color); /* Do not use with text */
-		--danger-color: var(--red-color);
-		--alert-color: var(--orange-color);
-		--success-color: var(--green-color);
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background-color: #121212;
-		--main-color: rgba(255,255,255,0.8); /* For texts on dark-background */
-
-		/* Shades */
-		--background-color-far: #000000;
-		--background-color-close: #1E1E1E;
-
-		/* Color safe on black */
-		--blue-color: #36A2FF;
-		--yellow-color: #FFC200;
-		--red-color: #F03331;
-		--orange-color: #F27D1F;
-		--green-color: #4B955E;
-
-		/* Elements colors */
-		--button-color: #070B0E;
-		--mark-color: #FFF0A3;
-		--kbd-background-color: #040607;
-
-		/* Palette */
-		--primary-color: var(--blue-color);
-		--accent-color: var(--yellow-color); /* Do not use with text */
-		--danger-color: var(--red-color);
-		--alert-color: var(--orange-color);
-		--success-color: var(--green-color);
-
-		/* Image recolorization */
-		--image-filter: grayscale(25%);
-	}
-}
-
-/* Repeat for vanilla-js toggle theme */
-.color-scheme-light {
+/* Automatic/Manual light mode */
+:root, 
+:root .color-scheme-light {
 	--background-color: #FAFAFA;
 	--main-color: rgba(0,0,0,0.8);
 
@@ -110,7 +42,47 @@
 	--icon-color-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>');
 }
 
-.color-scheme-dark {
+/* Automatic dark mode */
+/* Keep the rules in sync with the manual mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-color: #121212;
+		--main-color: rgba(255,255,255,0.8); /* For texts on dark-background */
+
+		/* Shades */
+		--background-color-far: #000000;
+		--background-color-close: #1E1E1E;
+
+		/* Color safe on black */
+		--blue-color: #36A2FF;
+		--yellow-color: #FFC200;
+		--red-color: #F03331;
+		--orange-color: #F27D1F;
+		--green-color: #4B955E;
+
+		/* Elements colors */
+		--button-color: #070B0E;
+		--mark-color: #FFF0A3;
+		--kbd-background-color: #040607;
+
+		/* Palette */
+		--primary-color: var(--blue-color);
+		--accent-color: var(--yellow-color); /* Do not use with text */
+		--danger-color: var(--red-color);
+		--alert-color: var(--orange-color);
+		--success-color: var(--green-color);
+
+		/* Image recolorization */
+		--image-filter: grayscale(25%);
+
+		/* Icon for color-scheme-toggle */
+		--icon-color-scheme: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>');
+	}
+}
+
+/* Manual dark mode */
+/* Keep the rules in sync with the automatic mode */
+:root .color-scheme-dark {
 	--background-color: #121212;
 	--main-color: rgba(255,255,255,0.8);
 
@@ -148,10 +120,4 @@
 /* See https://web.dev/prefers-color-scheme/#re-colorize-and-darken-photographic-images */
 img:not([src*=".svg"]) {
 	filter: var(--image-filter);
-}
-
-::selection {
-	background: var(--selection-color);
-	color: currentColor;
-	text-shadow: none; /* Remove text-shadow in selection highlight */
 }

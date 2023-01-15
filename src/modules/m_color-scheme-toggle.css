@@ -1,4 +1,8 @@
-/* Color Scheme Toggle
+/* Module : color-scheme-toggle
+
+	<button type="button" class="color-scheme-toggle rounded-circle"></button>
+
+	Needs croissant.js > Spoon: color-mode
    ========================================================================== */
 
 .color-scheme-toggle {

@@ -14,8 +14,8 @@ See https://github.com/twbs/bootstrap/issues/18178 */
 	max-width: 100%;
 	height: auto;
 	padding: 0.25rem;
-	background-color: var(--background-color-close);
-	border: 1px solid var(--background-color-far);
+	background-color: var(--background-color-close, #FFFFFF);
+	border: 1px solid var(--background-color-far, #E1E1E1);
 	border-radius: 0.25rem;
 }
 
