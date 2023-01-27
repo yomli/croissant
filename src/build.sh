@@ -28,9 +28,14 @@ done 3< "$INPUT"
 
 if [[ -f "croissant-$NOW.css" ]]
 then
-	# This command removes comments from CSS and Javascript files using sed.
-	# Courtesy of https://github.com/CMDann/CSSJSMinify
-	cat croissant-$NOW.css | sed -e "s|/\*\(\\\\\)\?\*/|/~\1~/|g" -e "s|/\*[^*]*\*\+\([^/][^*]*\*\+\)*/||g" -e "s|\([^:/]\)//.*$|\1|" -e "s|^//.*$||" | tr '\n' ' ' | sed -e "s|/\*[^*]*\*\+\([^/][^*]*\*\+\)*/||g" -e "s|/\~\(\\\\\)\?\~/|/*\1*/|g" -e "s|\s\+| |g" -e "s| \([{;:,]\)|\1|g" -e "s|\([{;:,]\) |\1|g" > croissant-$NOW.min.css
+	if dpkg -l minify;
+	then
+		minify croissant-$NOW.css > croissant-$NOW.min.css
+	else
+		# This command removes comments from CSS and Javascript files using sed.
+		# Courtesy of https://github.com/CMDann/CSSJSMinify
+		cat croissant-$NOW.css | sed -e "s|/\*\(\\\\\)\?\*/|/~\1~/|g" -e "s|/\*[^*]*\*\+\([^/][^*]*\*\+\)*/||g" -e "s|\([^:/]\)//.*$|\1|" -e "s|^//.*$||" | tr '\n' ' ' | sed -e "s|/\*[^*]*\*\+\([^/][^*]*\*\+\)*/||g" -e "s|/\~\(\\\\\)\?\~/|/*\1*/|g" -e "s|\s\+| |g" -e "s| \([{;:,]\)|\1|g" -e "s|\([{;:,]\) |\1|g" > croissant-$NOW.min.css
+	fi
 fi
 
 exit 0

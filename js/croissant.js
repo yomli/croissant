@@ -1,15 +1,18 @@
 var ready = function() {
 	'use strict';
-/* See comments of https://dev.to/mrahmadawais/use-instead-of-document-queryselector-all-in-javascript-without-jquery-3ef1 */
-// const $ = (css, parent = document) => parent.querySelector(css);
-// const $$ = (css, parent = document) => Array.from(parent.querySelectorAll(css));
-const $ = (q, d = document) => 
-	/#\S+$/.test(q)							// check if query asks for ID
-	? d.querySelector.bind(d)(q)			// if so, return one element
-	: [...d.querySelectorAll.bind(d)(q)];	// else, return all elements in an array.
+	
+	/*!
+	 * Vanille.js core
+	 * Licensed MIT (https://github.com/yomli/vanille/blob/main/LICENSE)
+	 */
+	const $ = (q, d = document) => 
+		/#\S+$/.test(q)		
+		? d.querySelector.bind(d)(q)
+		: [...d.querySelectorAll.bind(d)(q)];
 
-const body = document.body;
-const html = document.documentElement;
+	const body = document.body;
+	const html = document.documentElement;
+
 /*
 	Spoon: scroller-hide
 	Hide scroller when viewport's height is superior to the content.

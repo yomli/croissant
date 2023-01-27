@@ -1,3 +1,7 @@
+/*!
+ * Croissant
+ * Licensed MIT (https://github.com/yomli/croissant/blob/main/LICENSE)
+ */
 :root {
 	color-scheme: light dark;
 
@@ -10,7 +14,7 @@
 }
 
 /* Automatic/Manual light mode */
-:root, 
+:root,
 :root .color-scheme-light {
 	--background-color: #FAFAFA;
 	--main-color: rgba(0,0,0,0.8);
