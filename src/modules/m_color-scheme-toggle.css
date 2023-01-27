@@ -6,7 +6,7 @@
 		</style>
 	</noscript>
 
-	<button type="button" class="color-scheme-toggle rounded-circle"></button>
+	<button type="button" aria-hidden="true" class="color-scheme-toggle rounded-circle"></button>
 
 	Needs croissant.js > Spoon: color-mode
    ========================================================================== */
