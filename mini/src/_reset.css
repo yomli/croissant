@@ -58,7 +58,7 @@ ul[class], ol[class] {
 img {
 	max-width: 100%;
 	height: auto;
-	display: block;
+	vertical-align: middle;
 }
 
 /* Always inherit font */

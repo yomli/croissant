@@ -4,17 +4,16 @@
 .navbar {
 	display: flex;
 	justify-content: space-between;
-	gap: 0.5rem 1rem;
+	gap: 1rem;
 	padding: 0 1rem;
 }
-.navbar > * {
-	align-self: center;
-}
 .navbar-brand {
+	display: flex;
+	gap: 0.5rem;
 	font-size: 1.75rem;
 	line-height: 1.75rem;
 	margin: 0;
-	padding: 0;
+	padding: 0.5rem 0;
 }
 .navbar-menu {
 	display: flex;
@@ -30,4 +29,17 @@
 	padding: 0.75rem;
 	width: 100%;
 	display: inline-block;
+}
+
+@media screen and (min-width: 44rem) {
+	.navbar {
+		display: grid;
+		grid-template-columns: auto 1fr;
+	}
+	.navbar > * {
+		align-self: center;
+	}
+	.navbar-brand {
+		display: block;
+	}
 }
