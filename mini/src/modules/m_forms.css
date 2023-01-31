@@ -18,6 +18,13 @@ textarea {
 	min-height: 4rem;
 }
 
+fieldset {
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
 [type="submit"],
 [type="reset"],
 [type="button"],
