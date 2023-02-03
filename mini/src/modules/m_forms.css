@@ -73,18 +73,24 @@ select:focus {
 	opacity: 0.6;
 }
 
-:disabled {
+input:disabled,
+textarea:disabled,
+select:disabled {
 	background-color: rgba(125,125,125,0.1);
 	color: currentColor;
 	cursor: default;
 }
 
-:required {
+input:required,
+textarea:required,
+select:required {
 	border-color: initial;
 	box-shadow: none;
 }
 
-:not(:focus):invalid {
+input:not(:focus):invalid,
+textarea:not(:focus):invalid,
+select:not(:focus):invalid {
 	border-color: var(--danger-color);
 	box-shadow: 0 0 0 1px var(--danger-color) inset;
 }
