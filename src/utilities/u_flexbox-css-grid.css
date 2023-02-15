@@ -1,3 +1,8 @@
+/**
+ * Croissant: CSS grid using flexbox
+ * Greatly inspired by frow https://github.com/Beg-in/frow
+ */
+
 /* Optional */
 .container {
 	width: 100%;
@@ -19,7 +24,6 @@
 	padding-left: 0;
 }
 
-/* New, greatly inspired by frow https://github.com/Beg-in/frow */
 .row,
 [class*="row-"] {
 	display: flex;
@@ -43,7 +47,7 @@
 	[class*="row-xs-"] {
 		justify-content: start; /* Opinionated */
 	}
-	.row-xs > * { 
+	.row-xs > * {
 		flex: 1 0 auto;
 		width: auto;
 	}
@@ -80,7 +84,7 @@
 	[class*="row-sm-"] {
 		justify-content: start; /* Opinionated */
 	}
-	.row-sm > * { 
+	.row-sm > * {
 		flex: 1 0 auto;
 		width: auto;
 	}
@@ -117,11 +121,11 @@
 	[class*="row-"] {
 		justify-content: start; /* Opinionated */
 	}
-	
-	/* Only on unstyled col in unstyled row. 
+
+	/* Only on unstyled col in unstyled row.
 	   That way, unstyled col in styled rows will adapt. */
 	.row > *,
-	.row-md > * { 
+	.row-md > * {
 		flex: 1 1 auto;
 		width: auto;
 	}
@@ -155,7 +159,7 @@
 }
 
 @media (min-width: 1200px) { /* Desktop LG */
-	.row-lg > * { 
+	.row-lg > * {
 		flex: 1 0 auto;
 		width: auto;
 	}

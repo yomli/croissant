@@ -41,12 +41,12 @@
 }
 .scroller-link:hover,
 .scroller-link:focus {
-	-webkit-filter: saturate(95%) brightness(105%);
-	filter: saturate(95%) brightness(105%);
+	-webkit-filter: saturate(75%) brightness(125%);
+	filter: saturate(75%) brightness(125%);
 }
 .scroller-link:active {
-	-webkit-filter: brightness(115%);
-	filter: brightness(115%);
+	-webkit-filter: brightness(125%);
+	filter: brightness(125%);
 }
 @media print {
 	.scroller {

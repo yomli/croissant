@@ -1,0 +1,28 @@
+/* Input alternate
+   ========================================================================== */
+
+.input-alternate {
+	border-color: transparent;
+	border-bottom-color: rgba(125,125,125,0.3);
+	border-radius: 0 !important;
+	background: transparent no-repeat;
+	background-image: linear-gradient(to bottom, var(--primary-color, #0071AD), var(--primary-color, #0071AD));
+	background-size: 0 2px;
+	background-position: 50% 100%;
+	transition: border-bottom-color 0.25s ease-in-out, background-size 0.25s ease-in-out;
+}
+
+.input-alternate:focus {
+	border-color: transparent;
+	border-bottom-color: transparent;
+	box-shadow: none !important;
+	background-size: 100% 2px;
+}
+
+.input-alternate:not(:focus):invalid {
+	border-color: transparent;
+	box-shadow: none !important;
+	border-bottom-color: transparent;
+	background-image: linear-gradient(to bottom, var(--danger-color, #DE2A2A), var(--danger-color, #DE2A2A));
+	background-size: 100% 2px;
+}

@@ -1,13 +1,14 @@
-/* Module : content
+/**
+ * Module: Content
+ */
 
+/* Animated links
    ========================================================================== */
-
-/* Links */
-.content a:not(.button) {
+.content a:not([class]) {
 	position: relative;
 }
 
-.content a:not(.button)::after {
+.content a:not([class])::after {
 	border-top: 0.1em solid var(--primary-color, #0071AD);
 	content: "";
 	position: absolute;
@@ -17,12 +18,12 @@
 	transition: right 0.4s cubic-bezier(0,0.5,0,1);
 }
 
-.content a:not(.button):hover,
-.content a:not(.button):focus {
+.content a:not([class]):hover,
+.content a:not([class]):focus {
 	text-decoration: none;
 }
 
-.content a:not(.button):hover::after,
-.content a:not(.button):focus::after {
+.content a:not([class]):hover::after,
+.content a:not([class]):focus::after {
 	right: 0;
 }

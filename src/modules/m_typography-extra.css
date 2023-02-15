@@ -1,4 +1,9 @@
-/* List styles */
+/**
+ * Module: Typography Extra
+ */
+
+/* Lists
+   ========================================================================== */
 
 ul.list-custom {
 	list-style: var(--type);
@@ -37,13 +42,15 @@ ol.list-custom li::before {
 	font-size: 2rem;
 }
 
-/* Censored text */
-.censored, 
+/* Censored text
+   ========================================================================== */
+.censored,
 .censored > * {
 	/* background-color: currentColor; */
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(127,127,127,0.8);
 	color: transparent;
 	cursor: zoom-in;
+	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -51,8 +58,8 @@ ol.list-custom li::before {
 	touch-action: manipulation;
 }
 
-.censored:hover, 
-.censored:focus { 
+.censored:hover,
+.censored:focus {
 	background-color: transparent;
 	color: inherit;
 }

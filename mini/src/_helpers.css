@@ -1,11 +1,29 @@
-/* Helpers */
+/**
+ * Croissant: Helpers
+ */
+
+/* Shapes
+   ========================================================================== */
 
 .rounded {
 	border-radius: 0.25rem !important;
 }
 
 .rounded-circle {
-	border-radius: 100% !important;
+	border-radius: 50% !important;
+}
+
+/* Shadows
+   ========================================================================== */
+
+.card {
+	border-radius: 0.25rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.card.is-background {
+	background: rgba(127,127,127,0.05);
 }
 
 .card,
@@ -26,11 +44,6 @@
 	box-shadow: none;
 }
 
-.card {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
 .animated-raised:hover,
 .animated-raised:focus {
 	position: relative;
@@ -42,7 +55,12 @@
 	top: 0;
 }
 
-/* Stretched link, must be in relative parent */
+/* Misc
+   ========================================================================== */
+
+/**
+ * Stretched link, must be in relative parent
+ */
 .stretched-link::after {
 	position: absolute;
 	top: 0;

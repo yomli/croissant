@@ -1,4 +1,9 @@
-/* Forked from basscss's flexbox module, licensed MIT (https://github.com/basscss/basscss/blob/master/LICENSE.md) */
+/**
+ * Croissant: Flexbox helpers
+ * Forked from basscss's flexbox module
+ * Licensed MIT (https://github.com/basscss/basscss/blob/master/LICENSE.md)
+ */
+
 .flex { display: flex; }
 .flex-auto { flex: 1 1 auto; }
 .flex-none { flex: none; }

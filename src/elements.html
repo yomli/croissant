@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	<title>Document</title>
+	<meta name="description" content="Description of the page less than 150 characters">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="//yom.li/cdn/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="//yom.li/cdn/assets/img/favicon.png" type="image/png">
+
+	<!-- Apple Web App Meta -->
+	<link rel="apple-touch-icon" href="//yom.li/cdn/assets/img/apple-touch-icon.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- Microsoft Tiles -->
+	<meta name="msapplication-config" content="//yom.li/cdn/assets/img/browserconfig.xml">
+
+	<!-- RSS feeds -->
+
+	<!-- Social tags: Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@_yomli">
+	<meta name="twitter:title" content="Title (max 70 characters)">
+	<meta name="twitter:description" content="Description (maximum 200 characters)">
+	<meta name="twitter:image" content="URL of image. Less than 5MB. JPG, PNG, WEBP and GIF">
+	<meta name="twitter:image:alt" content="Maximum 420 characters.">
+
+	<!-- Social tags: Facebook -->
+	<meta property="og:url" content="URL">
+	<meta property="og:title" content="Title of the article without any brand or name of website">
+	<meta property="og:description" content="Description">
+	<meta property="og:image" content="URL of image. Min 600x315, < 8MB, recommended 1200x630">
+	<meta property="og:type" content="website, article, book, books.author, product or profile">
+	<meta property="og:locale" content="fr_FR">
+
+	<!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="./_loader.css">
+
+	<!-- JS Scripts -->
+
+	<style>
+
+	</style>
+
+</head>
+<body>
+<a class="skippy hidden" href="#content">
+  <span class="skippy-text">Skip to main content</span>
+</a>
+<div class="layout">
+<header class="header" role="banner">
+		<nav class="navbar">
+			<h1 class="navbar-brand">
+				<a href="/">yomli</a>
+			</h1>
+
+			<!-- Bad semantic but pure CSS -->
+			<input type="checkbox" id="navigation-burger" class="navbar-burger" aria-hidden="true">
+			<label for="navigation-burger" class="navbar-burger">
+				<span class="navbar-burger-bun"></span>
+			</label>
+
+						<ul class="list-unstyled navbar-menu" role="navigation">
+
+								<li class="active" aria-current="page"><a href="/">À propos</a></li>
+								<li><a href="/articles/">Articles</a></li>
+								<li><a href="/microblog/">Microblog</a></li>
+				<li><a href="https://editions.yom.li/">Édition</a></li>
+				<li><a href="https://dev.yom.li/">Développement</a></li>
+				<li><button type="button" aria-hidden="true" class="color-scheme-toggle rounded-circle"></button></li>
+			</ul>
+		</nav>
+	</header>
+
+
+<div id="wrapper" class="main--profile-page">
+
+<main id="content" class="card content">
+
+	<section class="tabs">
+				<!-- See https://www.heydonworks.com/article/aria-controls-is-poop to understand why the order matters -->
+				<input id="tab-1" name="tabs" class="tab-input" checked="checked" type="radio" />
+				<label for="tab-1" class="tab" role="tab" aria-selected="true" aria-controls="tab-panel-1" aria-expanded="true" tabindex="0">Text</label>
+				<div class="tab-panel" id="tab-panel-1" role="tabpanel" aria-labelledby="specification" aria-hidden="false">
+		<h3>Headings</h3>
+			<h1>Heading Level 1</h1>
+			<h2>Heading Level 2</h2>
+			<h3>Heading Level 3</h3>
+			<h4>Heading Level 4</h4>
+			<h5>Heading Level 5</h5>
+			<h6>Heading Level 6</h6>
+
+		<h3>Horizontal Rule</h3>
+			<hr />
+			<hr class="hr--small" />
+			<hr class="asterism" />
+
+		<h3>Inline Elements</h3>
+			<p>This text is normal.</p>
+			<p><em>This text has added emphasis.</em></p>
+			<p><strong>Strong specifies strong important text.</strong></p>
+			<p><i>The i element offsets the mood of text without emphasis.</i></p>
+			<p><b>The b element has a different style without contextual importance.</b></p>
+			<p>This text is <del>deleted</del>.</p>
+			<p>This text is <ins>inserted</ins>.</p>
+			<p><s>This text is no longer relevant.</s></p>
+			<p>Superscript: x<sup>2</sup> + y<sup>2</sup>. <span class="uppercase">M<sup>me</sup> De Sévigné</span></p>
+			<p>Subscript: H<sub>2</sub>O.</p>
+			<p><small>This text is small.</small></p>
+			<p>Abbreviations (responsive): <abbr title="Cascading Style Sheet">CSS</abbr> and <abbr>HTML</abbr>.</p>
+			<p>The <mark>mark element</mark> indicates a highlight.</p>
+			<p>The <u>u element</u> is a text with a non-textual annotation.</p>
+
+			<p>This is a short inline quotation: <q cite="Doctor Who">Allons-y !</q></p>
+			<p>And indicating the title of the citation: <cite title="Doctor Who, Series 4">Doctor Who</cite>.</p>
+			<p>A short inline <dfn>definition</dfn>: to define the meaning of a word.</p>
+			<p>The var element is for searching <var>n</var> occurences.</p>
+
+			<h4>Code</h4>
+				<p><code>Some computer code text.</code></p>
+				<p><samp>And some sample computer code.</samp></p>
+				<p><a href="" title="Code">And this is some <code>code</code> in a link</a></p>
+				<p>Keyboard input: <kbd><kbd>Alt</kbd> + <kbd>F4</kbd></kbd></p>
+
+			<h4>Extra: Inline elements</h4>
+				<p>Time is an illusion. <time datetime="12:30">Lunchtime</time> doubly so.</p>
+				<p>Spoilers: <span class="spoiler">there is no spoilers</span>.</p>
+				<p>Censored: <span class="censored">some classified information</span>.</p>
+
+			<h4>Extra: Components</h4>
+				<p>I rate this <span class="rating--stars">3 hearts</span>!</p>
+				<p>65 GB free out of 120 GB <meter max="120" value="55">55 GB</meter></p>
+				<p>30 GB free out of 120 GB <meter max="120" value="90" class="meter--thin">90 GB</meter></p>
+
+		<h3 class="asterism">Link</h3>
+			<p><a href="#" title="Something clever">This text is a link. Yes, just a simple link.</a></p>
+
+		<h3>List</h3>
+			<h4>Unordered list</h4>
+			<ul>
+				<li>First level list</li>
+				<li>First level list
+					<ul>
+						<li>Second level list</li>
+						<li>Second level list</li>
+					</ul>
+				</li>
+			</ul>
+			<h4>Ordered list</h4>
+			<ol>
+				<li>First level list</li>
+				<li>First level list
+					<ol>
+						<li>Second level list</li>
+						<li>Second level list</li>
+					</ol>
+				</li>
+			</ol>
+			<h4>Roman ordered list</h4>
+			<ol type="I">
+				<li>First level list</li>
+				<li>First level list</li>
+			</ol>
+			<h4>Unstyled list</h4>
+			<ul role="list">
+				<li>First level list</li>
+				<li>First level list
+					<ul role="list">
+						<li>Second level list</li>
+						<li>Second level list</li>
+					</ul>
+				</li>
+			</ul>
+			<h4>Inline list</h4>
+			<ul role="list" class="list-inline">
+				<li>First level list</li>
+				<li>First level list</li>
+				<li>First level list</li>
+			</ul>
+			<h4>Definition list</h4>
+			<dl>
+				<dt>Term</dt>
+				<dd>Description</dd>
+				<dt>Term</dt>
+				<dd>Description</dd>
+			</dl>
+			<h4>Extra: Custom unordered list</h4>
+			<ul style="--type: '—\a0'" class="list-custom">
+				<li>First level list</li>
+				<li>First level list
+					<ul>
+						<li>Second level list</li>
+						<li>Second level list</li>
+					</ul>
+				</li>
+			</ul>
+			<h4>Extra: Custom base64 SVG icon unordered list</h4>
+			<ul style="--type: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);" class="list-custom">
+				<li>First level list</li>
+				<li>First level list
+					<ul class="list-custom">
+						<li>Second level list</li>
+						<li>Second level list</li>
+					</ul>
+				</li>
+			</ul>
+			<h4>Extra: Custom ordered list</h4>
+			<ol style="--sep: '/'" class="list-custom">
+				<li>First level list</li>
+				<li>First level list
+					<ol style="--type: lower-alpha; --sep: ')';" class="list-custom">
+						<li>Second level list</li>
+						<li>Second level list</li>
+					</ol>
+				</li>
+			</ol>
+
+
+
+		<h3>Paragraphs</h3>
+			<p>Lorem ipsum In dolore quis in nisi id non nisi laborum laborum consequat tempor eiusmod est ut laboris deserunt eiusmod eiusmod aute tempor aliqua ut et est ullamco mollit eu commodo in esse voluptate elit veniam dolor incididunt.</p>
+
+			<h4>Extra: Card Paragraph</h4>
+				<p class="card">Lorem ipsum In dolore quis in nisi id non nisi laborum laborum consequat tempor eiusmod est ut laboris deserunt eiusmod eiusmod aute tempor aliqua ut et est ullamco mollit eu commodo in esse voluptate elit veniam dolor incididunt.</p>
+
+			<h4>Extra: Cards in card Paragraph</h4>
+				<div class="card is-background">
+					<div class="card is-background">
+						<div class="card is-background">Lorem ipsum In dolore quis in nisi id non nisi laborum </div><div class="card is-background">laborum consequat tempor eiusmod
+						</div>
+					</div>
+					<div class="card is-background">est ut laboris deserunt eiusmod eiusmod aute tempor aliqua ut et est ullamco mollit eu commodo in esse voluptate elit veniam dolor incididunt.
+					</div>
+				</div>
+
+			<h4>Extra: Colored card Paragraph</h4>
+				<p class="is-primary card">Lorem ipsum In dolore quis in nisi id non nisi laborum laborum consequat tempor eiusmod est ut laboris deserunt eiusmod eiusmod aute tempor aliqua ut et est ullamco mollit eu commodo in esse voluptate elit veniam dolor incididunt.</p>
+
+			<h4>Extra: Spoiler Paragraph</h4>
+				<p class="spoiler">Lorem ipsum In dolore quis in nisi id non nisi laborum laborum consequat tempor eiusmod est ut laboris deserunt eiusmod eiusmod aute tempor aliqua ut et est ullamco mollit eu commodo in esse voluptate elit veniam dolor incididunt.</p>
+
+			<h4>Extra: Censored Paragraph</h4>
+				<p class="censored">Lorem ipsum In dolore quis in nisi id non nisi laborum laborum consequat tempor eiusmod est ut laboris deserunt eiusmod eiusmod aute tempor aliqua ut et est ullamco mollit eu commodo in esse voluptate elit veniam dolor incididunt.</p>
+
+			<h4>Details/Summary</h4>
+				<details>
+					<summary>Click here</summary>
+					<p>Lorem ipsum In dolore quis in nisi id non nisi laborum laborum consequat tempor eiusmod est ut laboris deserunt eiusmod eiusmod aute tempor aliqua ut et est ullamco mollit eu commodo in esse voluptate elit veniam dolor incididunt.</p>
+				</details>
+
+				<h3>Preformatted Text</h3>
+
+					<pre>P R E F O R M A T T E D T E X T
+					! " # $ % &amp; ' ( ) * + , - . /
+					0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+					@ A B C D E F G H I J K L M N O
+					P Q R S T U V W X Y Z [ \ ] ^ _
+					` a b c d e f g h i j k l m n o
+					p q r s t u v w x y z { | } ~</pre>
+
+					<h4>Code nested in preformatted text</h4>
+					<pre>
+						<code>
+					pre code {
+						font-size: inherit;
+						color: inherit;
+						word-break: normal;
+					}
+						</code>
+					</pre>
+
+				<h3>Blockquote</h3>
+				<blockquote cite="https://www.huxley.net/bnw/four.html">
+					Words can be like X-rays, if you use them properly – they'll go through anything. You read and you're pierced.
+					<footer>Aldous Huxley, <cite>Brave New World</cite></footer>
+				</blockquote>
+
+
+				</div>
+
+				<input id="tab-3" name="tabs" class="tab-input" type="radio" />
+			<label for="tab-3" class="tab" role="tab" aria-selected="false" aria-controls="tab-panel-3" aria-expanded="false" tabindex="0">Images</label>
+			<div class="tab-panel" id="tab-panel-3" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+
+			<h3>Responsive image</h3>
+				<img src="img/placeholder.svg" alt="Placeholder" class="fit" />
+
+			<h3>Thumbnail image</h3>
+				<img src="img/placeholder.svg" width="300px" alt="Placeholder" class="thumbnail" />
+
+			<h3>Square image</h3>
+				<img src="img/banner.png" alt="Placeholder" class="square" width="300px" />
+
+			<h3>Rounded image</h3>
+				<img src="img/banner.jpg" width="300px" alt="Placeholder" class="rounded" />
+
+			<h3>Round image</h3>
+				<img src="img/banner.jpg" width="300px" alt="Placeholder" class="rounded-circle" />
+
+			<h3>Pill image</h3>
+				<img src="img/placeholder.svg" width="300px" alt="Placeholder" class="rounded-pill" />
+
+			<h3>Figures</h3>
+				<figure>
+  					<img src="img/placeholder.svg" class="fit" alt="" />
+  					<figcaption>Legendary caption</figcaption>
+				</figure>
+
+			<h3>Extra: Card Image</h3>
+				<img src="img/placeholder.svg" alt="Image" class="fit card" />
+
+			<h3>Extra: Avatar image</h3>
+				<img src="img/banner.jpg" width="300px" alt="Placeholder" class="avatar" />
+
+			<h3>Extra: Filtered Images</h3>
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-blur" />
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-brightness" />
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-contrast" />
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-invert" />
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-sepia" />
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-grayscale" />
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-desaturate" />
+				<img src="img/placeholder.svg" alt="Image" width="22%" class="filter-drop-shadow" />
+
+			<h3>Extra: Resizing helpers</h3>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-16x16"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-24x24"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-32x32"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-48x48"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-64x64"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-96x96"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-128x128"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-256x256"/>
+				<img src="img/placeholder.svg" alt="Placeholder" class="is-512x512"/>
+			</div>
+
+				<input id="tab-2" name="tabs" class="tab-input" type="radio" />
+				<label for="tab-2" class="tab" role="tab" aria-selected="false" aria-controls="tab-panel-2" aria-expanded="false" tabindex="0">Buttons</label>
+				<div class="tab-panel" id="tab-panel-2" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+						<h3>Buttons</h3>
+			<div>
+				<button>Button</button>
+				<button class="is-primary">Button</button>
+				<button class="is-accent">Accent</button>
+				<button class="is-danger">Danger</button>
+				<button class="is-alert">Alert</button>
+				<button class="is-success">Success</button>
+			</div>
+			<div>
+				<button disabled>Button</button>
+				<button class="is-primary" disabled>Button</button>
+				<button class="is-accent" disabled>Accent</button>
+				<button class="is-danger" disabled>Danger</button>
+				<button class="is-alert" disabled>Alert</button>
+				<button class="is-success" disabled>Success</button>
+			</div>
+
+			<h4>Flat Buttons</h4>
+				<div>
+					<button class="button--flat">Button</button>
+					<button class="is-primary button--flat">Button</button>
+					<button class="is-accent button--flat">Accent</button>
+					<button class="is-danger button--flat">Danger</button>
+					<button class="is-alert button--flat">Alert</button>
+					<button class="is-success button--flat">Success</button>
+				</div>
+				<div>
+					<button class="button--flat" disabled>Button</button>
+					<button class="is-primary button--flat" disabled>Button</button>
+					<button class="is-accent button--flat" disabled>Accent</button>
+					<button class="is-danger button--flat" disabled>Danger</button>
+					<button class="is-alert button--flat" disabled>Alert</button>
+					<button class="is-success button--flat" disabled>Success</button>
+				</div>
+
+			<h4>Raised Buttons</h4>
+				<div>
+					<button class="raised">Button</button>
+					<button class="is-primary raised">Button</button>
+					<button class="is-accent raised">Accent</button>
+					<button class="is-danger raised">Danger</button>
+					<button class="is-alert raised">Alert</button>
+					<button class="is-success raised">Success</button>
+				</div>
+				<div>
+					<button class="raised" disabled>Button</button>
+					<button class="is-primary raised" disabled>Button</button>
+					<button class="is-accent raised" disabled>Accent</button>
+					<button class="is-danger raised" disabled>Danger</button>
+					<button class="is-alert raised" disabled>Alert</button>
+					<button class="is-success raised" disabled>Success</button>
+				</div>
+
+				<h4>Round Buttons</h4>
+				<div>
+					<button class="rounded-circle">→</button>
+					<button class="is-primary rounded-circle">→</button>
+					<button class="is-accent rounded-circle">→</button>
+					<button class="is-danger rounded-circle">→</button>
+					<button class="is-alert rounded-circle">→</button>
+					<button class="is-success rounded-circle">→</button>
+				</div>
+				<div>
+					<button class="rounded-circle" disabled>→</button>
+					<button class="is-primary rounded-circle" disabled>→</button>
+					<button class="is-accent rounded-circle" disabled>→</button>
+					<button class="is-danger rounded-circle" disabled>→</button>
+					<button class="is-alert rounded-circle" disabled>→</button>
+					<button class="is-success rounded-circle" disabled>→</button>
+				</div>
+
+				<h4>Round And Raised Buttons</h4>
+				<div>
+					<button class="raised rounded-circle">→</button>
+					<button class="raised is-primary rounded-circle">→</button>
+					<button class="raised is-accent rounded-circle">→</button>
+					<button class="raised is-danger rounded-circle">→</button>
+					<button class="raised is-alert rounded-circle">→</button>
+					<button class="raised is-success rounded-circle">→</button>
+				</div>
+				<div>
+					<button class="raised rounded-circle" disabled>→</button>
+					<button class="raised is-primary rounded-circle" disabled>→</button>
+					<button class="raised is-accent rounded-circle" disabled>→</button>
+					<button class="raised is-danger rounded-circle" disabled>→</button>
+					<button class="raised is-alert rounded-circle" disabled>→</button>
+					<button class="raised is-success rounded-circle" disabled>→</button>
+				</div>
+
+			<h4>Sized Buttons</h4>
+				<div>
+					<button class="button--small">Button</button>
+					<button class="button--small button--flat">Button</button>
+					<button class="button--small raised">Button</button>
+					<button class="button--small rounded-circle raised">→</button>
+				</div>
+				<div>
+					<button class="is-primary">Button</button>
+					<button class="button--flat">Button</button>
+					<button class="raised">Button</button>
+					<button class="rounded-circle raised">→</button>
+				</div>
+				<div>
+					<button class="button--large">Button</button>
+					<button class="button--large button--flat">Button</button>
+					<button class="button--large raised">Button</button>
+					<button class="rounded-circle button--large raised">→</button>
+				</div>
+
+
+		<h3>Text Buttons</h3>
+			<div>
+				<a href="#" title="Title" class="button">Button</a>
+				<a href="#" title="Title" class="button is-primary">Button</a>
+				<a href="#" title="Title" class="button is-accent">Accent</a>
+				<a href="#" title="Title" class="button is-danger">Danger</a>
+				<a href="#" title="Title" class="button is-alert">Alert</a>
+				<a href="#" title="Title" class="button is-success">Success</a>
+			</div>
+			<div>
+				<a href="#" title="Title" class="button button--disabled">Button</a>
+				<a href="#" title="Title" class="button is-primary disabled">Button</a>
+				<a href="#" title="Title" class="button is-accent disabled">Accent</a>
+				<a href="#" title="Title" class="button is-danger disabled">Danger</a>
+				<a href="#" title="Title" class="button is-alert disabled">Alert</a>
+				<a href="#" title="Title" class="button is-success disabled">Success</a>
+			</div>
+
+			<h4>Flat Text Buttons</h4>
+				<div>
+					<a href="#" title="Title" class="button button--flat">Button</a>
+					<a href="#" title="Title" class="button is-primary button--flat">Button</a>
+					<a href="#" title="Title" class="button is-accent button--flat">Accent</a>
+					<a href="#" title="Title" class="button is-danger button--flat">Danger</a>
+					<a href="#" title="Title" class="button is-alert button--flat">Alert</a>
+					<a href="#" title="Title" class="button is-success button--flat">Success</a>
+				</div>
+				<div>
+					<a href="#" title="Title" class="button disabled button--flat">Button</a>
+					<a href="#" title="Title" class="button is-primary disabled button--flat">Button</a>
+					<a href="#" title="Title" class="button is-accent disabled button--flat">Accent</a>
+					<a href="#" title="Title" class="button is-danger button--disabled button--flat">Danger</a>
+					<a href="#" title="Title" class="button is-alert button--disabled button--flat">Alert</a>
+					<a href="#" title="Title" class="button is-success button--disabled button--flat">Success</a>
+				</div>
+
+			<h4>Raised Text Buttons</h4>
+				<div>
+					<a href="#" title="Title" class="button raised">Button</a>
+					<a href="#" title="Title" class="button is-primary raised">Button</a>
+					<a href="#" title="Title" class="button is-accent raised">Accent</a>
+					<a href="#" title="Title" class="button is-danger raised">Danger</a>
+					<a href="#" title="Title" class="button is-alert raised">Alert</a>
+					<a href="#" title="Title" class="button is-success raised">Success</a>
+				</div>
+				<div>
+					<a href="#" title="Title" class="button button--disabled raised">Button</a>
+					<a href="#" title="Title" class="button is-primary button--disabled raised">Button</a>
+					<a href="#" title="Title" class="button is-accent button--disabled raised">Accent</a>
+					<a href="#" title="Title" class="button is-danger button--disabled raised">Danger</a>
+					<a href="#" title="Title" class="button is-alert button--disabled raised">Alert</a>
+					<a href="#" title="Title" class="button is-success button--disabled raised">Success</a>
+				</div>
+
+			<h4>Round Text Buttons</h4>
+				<div>
+					<a href="#" title="Title" class="button rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-primary rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-accent rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-danger rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-alert rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-success rounded-circle">→</a>
+				</div>
+				<div>
+					<a href="#" title="Title" class="button button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-primary button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-accent button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-danger button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-alert button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="button is-success button--disabled rounded-circle">→</a>
+				</div>
+
+			<h4>Round And Raised Text Buttons</h4>
+				<div>
+					<a href="#" title="Title" class="raised button rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-primary rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-accent rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-danger rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-alert rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-success rounded-circle">→</a>
+				</div>
+				<div>
+					<a href="#" title="Title" class="raised button disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-primary button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-accent button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-danger button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-alert button--disabled rounded-circle">→</a>
+					<a href="#" title="Title" class="raised button is-success button--disabled rounded-circle">→</a>
+				</div>
+
+			<h4>Sized Text Buttons</h4>
+				<div>
+					<a href="#" title="Title" class="button button--small">Button</a>
+					<a href="#" title="Title" class="button button--small button--flat">Button</a>
+					<a href="#" title="Title" class="button button--small raised">Button</a>
+					<a href="#" title="Title" class="button button--small raised rounded-circle">→</a>
+				</div>
+				<div>
+					<a href="#" title="Title" class="button">Button</a>
+					<a href="#" title="Title" class="button button--flat">Button</a>
+					<a href="#" title="Title" class="button raised">Button</a>
+					<a href="#" title="Title" class="button raised rounded-circle">→</a>
+				</div>
+				<div>
+					<a href="#" title="Title" class="button button--large">Button</a>
+					<a href="#" title="Title" class="button button--large button--flat">Button</a>
+					<a href="#" title="Title" class="button button--large raised">Button</a>
+					<a href="#" title="Title" class="button button--large raised rounded-circle">→</a>
+				</div>
+
+				</div>
+
+		<input id="tab-4" name="tabs" class="tab-input" type="radio" />
+		<label for="tab-4" class="tab" role="tab" aria-selected="false" aria-controls="tab-panel-4" aria-expanded="false" tabindex="0">Forms</label>
+		<div class="tab-panel" id="tab-panel-4" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+
+			<h3>Inputs</h3>
+
+			<h4>Text Field</h4>
+				<label class="floating-label">
+					<input type="text" placeholder=" " />
+					<span class="floating-label-text">Some text</span>
+				</label>
+
+				<label class="floating-label">
+					<input type="text" placeholder=" " pattern="[A-Z]" class="input-alternate"/>
+					<span class="floating-label-text">Some text</span>
+				</label>
+
+
+				<input type="text" placeholder="Disabled" disabled />
+
+			<h4>Search Field</h4>
+				<input type="search" placeholder="Some search" />
+
+			<h4>Phone field</h4>
+				<input type="tel" placeholder="+55 555 555" />
+
+			<h4>URL Field</h4>
+				<label class="floating-label">
+					<input type="url" placeholder=" " />
+					<span class="floating-label-text">http://some.url</span>
+					<span class="floating-label-error">Please enter a valid url.</span>
+				</label>
+
+
+			<h4>Email Field</h4>
+				<input type="email" placeholder="some@email.net" />
+
+			<h4>Password Field</h4>
+				<input type="password" placeholder="somepassword1" />
+
+			<h4>Number Field</h4>
+				<input type="number" placeholder="42" />
+
+			<h4>Range Field</h4>
+				<input type="range" min="0" max="100" step="5" value="30" />
+
+			<h4>Date/Time Inputs</h4>
+				<p><strong>Here for completion only: date/time inputs are not fully supported at the moment.</strong></p>
+				<input type="datetime" />
+				<input type="datetime-local" />
+				<input type="date" />
+				<input type="month" />
+				<input type="week" />
+				<input type="time" />
+
+			<h4>File Input</h4>
+				<input type="file" />
+
+			<h4>Color Input</h4>
+				<input type="color" />
+
+		<h3>Checkboxes</h3>
+
+			<h4>Default</h4>
+			<input type="checkbox" />
+			<input type="checkbox" checked />
+			<input type="checkbox" disabled />
+			<input type="checkbox" checked disabled />
+
+			<h4>Rotate</h4>
+			<input type="checkbox" class="checkbox--alt" />
+			<input type="checkbox" class="checkbox--alt" checked />
+			<input type="checkbox" class="checkbox--alt" disabled />
+			<input type="checkbox" class="checkbox--alt" checked disabled />
+
+			<h4>Switchs</h4>
+			<input type="checkbox" class="switch" />
+			<input type="checkbox" class="switch" checked />
+			<input type="checkbox" class="switch" disabled />
+			<input type="checkbox" class="switch" checked disabled />
+
+			<h4>Colors</h4>
+			<input type="checkbox" class="is-primary" checked />
+			<input type="checkbox" class="is-accent" checked />
+			<input type="checkbox" class="is-danger" checked />
+			<input type="checkbox" class="is-alert" checked />
+			<input type="checkbox" class="is-success" checked />
+
+			<input type="checkbox" class="checkbox--alt is-primary" checked />
+			<input type="checkbox" class="checkbox--alt is-accent" checked />
+			<input type="checkbox" class="checkbox--alt is-danger" checked />
+			<input type="checkbox" class="checkbox--alt is-alert" checked />
+			<input type="checkbox" class="checkbox--alt is-success" checked />
+
+			<input type="checkbox" class="switch is-primary" checked />
+			<input type="checkbox" class="switch is-accent" checked />
+			<input type="checkbox" class="switch is-danger" checked />
+			<input type="checkbox" class="switch is-alert" checked />
+			<input type="checkbox" class="switch is-success" checked />
+
+		<h3>Radio Buttons</h3>
+			<input type="radio" />
+			<input type="radio" checked />
+			<input type="radio" disabled />
+			<input type="radio" disabled checked />
+
+			<h4>Colors</h4>
+			<input type="radio" class="is-primary" checked />
+			<input type="radio" class="is-accent" checked />
+			<input type="radio" class="is-danger" checked />
+			<input type="radio" class="is-alert" checked />
+			<input type="radio" class="is-success" checked />
+
+		<h3>Labels</h3>
+		<input type="radio" name="input-radio" id="input-radio" /><label for="input-radio">This is a radio button.</label><br>
+		<input type="checkbox" name="input-checkbox" id="input-checkbox" /><label for="input-checkbox">This is a radio button.</label><br>
+		<label for="input-switch">This is a radio button.</label><input type="checkbox" class="switch" name="input-switch" id="input-switch" />
+
+		<h3>Textarea</h3>
+			<label class="floating-label">
+				<textarea placeholder=" "></textarea>
+				<span class="floating-label-text">Some text</span>
+			</label>
+
+
+		<h3>Select Menu</h3>
+			<select>
+				<optgroup label="Select Group 1">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</optgroup>
+				<optgroup label="Select Group 2">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</optgroup>
+			</select>
+
+		<h3>Buttons</h3>
+			<h4>Submit Button</h4>
+				<input type="submit" value="Submit" class="is-primary" />
+				<input type="submit" value="Submit" class="button--flat is-primary" />
+				<input type="submit" value="Submit" class="raised is-primary"/>
+				<input type="submit" value="Submit" disabled class="is-primary"/>
+
+			<h4>Reset Button</h4>
+				<input type="reset" value="Reset" class="is-primary" />
+				<input type="reset" value="Reset" class="button--flat is-primary" />
+				<input type="reset" value="Reset" class="raised is-primary" />
+				<input type="reset" value="Reset" disabled class="is-primary" />
+
+			<h4>Generic Button</h4>
+				<input type="button" value="Button" class="is-primary" />
+				<input type="button" value="Button" class="button--flat is-primary" />
+				<input type="button" value="Button" class="raised is-primary" />
+				<input type="button" value="Button" disabled class="is-primary" />
+
+			<h4>Image Input</h4>
+				<input type="image" alt="Submit" />
+				<input type="image" alt="Submit" src="img/banner.jpg" height="36px" />
+
+			<h4>Fieldset</h4>
+
+			<h4>Grid forms</h4>
+				<form class="column container">
+					<div class="row">
+						<div class="column">
+							<label for="inputEmail">Email</label>
+							<input type="email" id="inputEmail" />
+						</div>
+						<div class="column">
+							<label for="inputPassword">Password</label>
+							<input type="password" id="inputPassword" />
+						</div>
+					</div>
+						<input type="submit" value="Submit" class="is-primary" />
+						<input type="reset" value="Reset" class="button--flat is-primary" />
+				</form>
+
+
+		</div>
+
+				<input id="tab-5" name="tabs" class="tab-input" type="radio" />
+				<label for="tab-5" class="tab" role="tab" aria-selected="true" aria-controls="tab-panel-5" aria-expanded="true" tabindex="0">Grid</label>
+				<div class="tab-panel" id="tab-panel-5" role="tabpanel" aria-labelledby="specification" aria-hidden="false">
+
+		<h3>Simple grid</h3>
+					<div class="container">
+						<div class="row">
+							<div class="col"><p style="background-color: lightgray; min-height:3rem; margin: 0"></p></div>
+							<div class="col"><p style="background-color: lightgray; min-height:3rem; margin: 0"></p></div>
+							<div class="col"><p style="background-color: lightgray; min-height:3rem; margin: 0"></p></div>
+						</div>
+					</div>
+					<h3>Same-sizing grid</h3>
+					<div class="container">
+						<div class="row-1">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-2">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-3">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-4">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-5">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-6">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-7">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-8">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-9">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-10">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-11">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-12">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+					</div>
+
+					<h3>Refined columns grid</h3>
+					<div class="container">
+						<div class="row-1">
+							<div class="col-12"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-2">
+							<div class="col-11"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col-1"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-2">
+							<div class="col-10"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col-2"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-2">
+							<div class="col-9"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col-3"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-2">
+							<div class="col-8"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col-4"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-2">
+							<div class="col-7"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col-5"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+						<div class="row-2">
+							<div class="col-6"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col-6"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+						</div>
+					</div>
+
+					<h3>All combined</h3>
+						<div class="row-3">
+							<div class="col"><p style="background-color:lightgray; min-height:3rem;"></p></div>
+							<div class="col">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-8">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-6">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-6">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-2">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-2">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-2">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-4">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+						</div>
+
+					<h3>No gutters grid</h3>
+					<div class="container">
+						<div class="row-12 no-gutters">
+							<div class="col-12"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-11"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-1"><p style="background-color:lightgray; border: 1px solid gray;  margin:0; min-height:3rem;"></p></div>
+							<div class="col-10"><p style="background-color:lightgray; border: 1px solid gray;  margin:0; min-height:3rem;"></p></div>
+							<div class="col-2"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-9"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-3"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-8"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-4"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-7"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-5"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-6"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+							<div class="col-6"><p style="background-color:lightgray; border: 1px solid gray; margin:0; min-height:3rem;"></p></div>
+						</div>
+					</div>
+
+					<h3>Breakpoints-specific grid</h3>
+					<div class="container">
+						<div class="row-4 row-xs-2 row-sm-3">
+							<div class="col-12 col-xs-12 col-sm-12">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-3 col-xs-6 col-sm-4">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-3 col-xs-6 col-sm-4">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-3 col-xs-6 col-sm-4">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-3 col-xs-6 col-sm-4">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-9 col-xs-8 col-sm-8">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-3 col-xs-4 col-sm-4">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+						</div>
+					</div>
+
+					<h3>Tests</h3>
+					<div class="container">
+						<div class="row-2">
+							<div class="col">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-6">
+								<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-3">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+							<div class="col-3">
+									<p style="background-color:lightgray; min-height:3rem;"></p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+	</section>
+
+</main>
+
+<aside id="sidebar" class="sidebar">
+	<section class="profile">
+		<figure class="profile-picture">
+			<a href="https://yom.li/" title="">
+				<img src="https://thispersondoesnotexist.com/image" class="badge" alt="" style="--width:50%;" />
+			</a>
+			<figcaption>yomli</figcaption>
+		</figure>
+		<p class="bio">
+		Modeste écrivain, philosophe perdu, geek à ses heures et parfois développeur web. Aime le thé noir et le riz cantonnais.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus distinctio ea labore, aperiam autem fugit voluptate enim ipsum assumenda libero! Voluptatem voluptatibus eius nesciunt animi, laudantium beatae iure magnam ab.
+		</p>
+		<ul class="social-links list-unstyled list-inline">
+			<li><a href="" title="" class="button raised">Email</a></li>
+			<li><a href="" title="" class="button raised">DM</a></li>
+			<li><a href="" title="" class="button raised">Facebook</a></li>
+			<li><a href="" title="" class="button raised">Ipsum</a></li>
+		</ul>
+	</section>
+</aside>
+</div>
+
+
+
+<!-- <footer class="footer--company">
+		<div class="footer-content">
+			<h6>About</h6>
+			<p>
+				Croissant is a modular CSS Framework made with ❤️ by <a href="" title="">yomli</a> for quickstarting projects very fast <small>(and learning best practices, but keep this a secret)</small>.
+			</p>
+		</div>
+		<div class="footer-links">
+			<h6>Croissant</h6>
+			<ul class="list-unstyled">
+				<li><a href="#" title="" role="button">About</a></li>
+				<li><a href="#" title="" role="button">Get Started</a></li>
+				<li><a href="#" title="" role="button">Documentation</a></li>
+				<li><a href="#" title="" role="button">Wiki</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-links">
+			<h6>Follow Me</h6>
+			<ul class="list-unstyled">
+				<li><a href="#" title="" role="button">GitHub</a></li>
+				<li><a href="#" title="" role="button">Blog</a></li>
+				<li><a href="#" title="" role="button">Twitter</a></li>
+				<li><a href="#" title="" role="button">Mastodon</a></li>
+			</ul>
+		</div>
+		<p class="footer-copyright">
+			Licence <a href="" title="MIT">MIT</a> · Keep calm and drink tea
+		</p>
+</footer> -->
+
+<footer class="footer">
+		<p class="footer-copyright">
+			© 2019 <a href="" title="GitHub du framework CSS">Croissant</a>
+		</p>
+		<ul class="list-unstyled footer-links">
+			<li><a href="#" title="" role="button">About</a></li>
+			<li><a href="#" title="" role="button">Get Started</a></li>
+			<li><a href="#" title="" role="button">Documentation</a></li>
+			<li><a href="#" title="" role="button">Wiki</a></li>
+		</ul>
+</footer>
+</div>
+
+
+
+<script type="text/javascript">
+/*
+	Spoon: menu-toggle
+	Will toggle the no-scroll class on the body
+	Will display the black overlay
+*/
+
+;(function (window, document, undefined) {
+	'use strict';
+	if(!('querySelector' in document)) return;
+	var body = document.body;
+
+	var menuToggle = document.querySelectorAll('input[class$="menu-toggle"]');
+	if(!menuToggle) return;
+
+	// Toggle the no-scroll class on the body
+	[].forEach.call(menuToggle, function(menu) {
+	  menu.addEventListener('click', function() {
+		body.classList.toggle('global--menu-toggled', menu.checked);
+		body.scrollTop = 0;
+
+	  }, false);
+	});
+})(window, document);
+
+/*
+	Spoon: dark-mode
+	Will toggle the dark mode
+	Will make the change persistant
+	See https://gomakethings.com/adding-a-night-mode-to-your-site-with-vanilla-javascript/
+*/
+
+// This in header for performance issue
+;(function (window, document, undefined) {
+	'use strict';
+	var body = document.body;
+
+	if (!('localStorage' in window)) return;
+	var darkMode = localStorage.getItem('global--dark-mode');
+	// if (!darkMode) return;
+
+	body.className += (!darkMode) ? ' global--light-mode' : ' global--dark-mode';
+})(window, document);
+
+;(function (window, document, undefined) {
+	'use strict';
+	if (!('querySelector' in document)) return;
+	var body = document.body;
+
+	var darkModeButton = document.querySelectorAll('.dark-mode-toggle');
+	if (!darkModeButton) return;
+
+	// When clicked, toggle night mode on or off
+	[].forEach.call(darkModeButton, function(button) {
+		button.addEventListener('click', function(event) {
+			//event.preventDefault();
+			body.classList.toggle('global--dark-mode');
+			body.classList.toggle('global--light-mode');
+
+			// Feature test for localStorage
+			if(!('localStorage' in window)) return;
+
+			// Make night mode persistant
+			if(body.classList.contains('global--dark-mode')) {
+				localStorage.setItem('global--dark-mode', true);
+				return;
+			}
+			localStorage.removeItem('global--dark-mode');
+		}, false);
+
+	});
+
+})(window, document);
+
+</script>
+
+
+</body>
+</html>

@@ -5,8 +5,7 @@
 
 /* Light mode */
 :root {
-	color-scheme: light dark;
-	--font-sans: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
 	--background-color: #FAFAFA;
 	--main-color: rgba(0,0,0,0.8);
@@ -19,8 +18,8 @@
 	--button-color: #E1E1E1;
 
 	/* Palette */
-	--primary-color: #0071AD; /* Blue */
-	--accent-color: #FFC200; /* Yellow, do not use with text */
+	--primary-color: #0069A2; /* Blue */
+	--accent-color: #A22274; /* Purple */
 	--danger-color: #DE2A2A; /* Red */
 	--alert-color: #C44F0C; /* Orange */
 	--success-color: #41814F; /* Green */
@@ -40,8 +39,8 @@
 		--button-color: #070B0E;
 
 		/* Palette */
-		--primary-color: #36A2FF; /* Blue */
-		--accent-color: #FFC200; /* Yellow, do not use with text */
+		--primary-color: #008CD6; /* Blue */
+		--accent-color: #9F70CF; /* Purple */
 		--danger-color: #F03331; /* Red */
 		--alert-color: #F27D1F; /* Orange */
 		--success-color: #4B955E; /* Green */
