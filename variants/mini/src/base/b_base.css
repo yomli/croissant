@@ -1,0 +1,103 @@
+/**
+ * Croissant: Base
+ */
+
+/* Headings
+   ========================================================================== */
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; font-weight: 500; }
+
+
+/* Horizontal rules
+   ========================================================================== */
+
+hr {
+	margin: 1rem auto;
+	border: 0;
+	border-top: 1px solid currentColor;
+	opacity: 0.5;
+}
+
+/* Font styles
+   ========================================================================== */
+
+b,
+strong,
+.bold {
+	font-weight: 600;
+}
+
+.regular {
+	font-weight: normal;
+}
+
+.italic {
+	font-style: italic;
+}
+
+/* Emphasis
+   ========================================================================== */
+
+small,
+.small {
+	font-size: 80%;
+	font-weight: 400;
+}
+
+/* Lists
+   ========================================================================== */
+
+.list-inline li {
+	display: inline-block;
+}
+
+.list-inline li:not(:last-child) {
+	margin-right: 0.5rem;
+}
+
+/* Blockquotes & quotes
+   ========================================================================== */
+
+blockquote {
+	font-size: 1.25rem;
+}
+
+/* Figures
+   ========================================================================== */
+
+figure {
+	display: inline-block; /* Ensures the caption's text aligns with the image. */
+}
+
+figure img {
+	margin-bottom: 0.5rem;
+	line-height: 1;
+}
+
+figcaption {
+	font-size: 90%;
+	color: currentColor;
+	opacity: 0.6;
+	text-align: center;
+}
+
+/* Code
+   ========================================================================== */
+
+/* Inline code */
+code {
+	color: var(--success-color, #41814F);
+}
+
+/* Keyboard */
+kbd {
+	padding: 0.25rem 0.5rem;
+	background-color: var(--background-color, #F4F4F4);
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 0 2px var(--background-color-close, #fff) inset;
+	border-radius: 0.25rem;
+}

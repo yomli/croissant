@@ -2,10 +2,9 @@
  * Croissant
  * Licensed MIT (https://github.com/yomli/croissant/blob/main/LICENSE)
  */
-:root {
-	color-scheme: light dark;
 
-	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+:root {
+	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 	--font-system: var(--font-sans);
 	--font-serif:  Georgia, Times, "Times New Roman", serif;
 	--font-monospace: "Source Code Pro", "Roboto Mono", Cousine, Menlo, Consolas, Courier, monospace;
@@ -16,7 +15,7 @@
 /* Automatic/Manual light mode */
 :root,
 :root .color-scheme-light {
-	--background-color: #FAFAFA;
+	--background-color: #F4F4F4;
 	--main-color: rgba(0,0,0,0.8);
 
 	/* Shades */
@@ -24,20 +23,16 @@
 	--background-color-close: #FFFFFF;
 
 	/* Color safe on white */
-	--blue-color: #0071AD;
+	--blue-color: #0069A2;
 	--yellow-color: #FFC200; /* Do not use with text */
+	--purple-color: #A22274;
 	--red-color: #DE2A2A;
 	--orange-color: #C44F0C;
 	--green-color: #41814F;
 
-	/* Elements colors */
-	--button-color: #E1E1E1;
-	--mark-color: #FCF8E3;
-	--kbd-background-color: #F7F7F7;
-
 	/* Palette */
 	--primary-color: var(--blue-color);
-	--accent-color: var(--yellow-color); /* Do not use with text */
+	--accent-color: var(--purple-color);
 	--danger-color: var(--red-color);
 	--alert-color: var(--orange-color);
 	--success-color: var(--green-color);
@@ -55,23 +50,12 @@
 		--background-color-close: #1E1E1E;
 
 		/* Color safe on black */
-		--blue-color: #36A2FF;
+		--blue-color: #008CD6;
 		--yellow-color: #FFC200;
+		--purple-color: #9F70CF;
 		--red-color: #F03331;
 		--orange-color: #F27D1F;
 		--green-color: #4B955E;
-
-		/* Elements colors */
-		--button-color: #070B0E;
-		--mark-color: #FFF0A3;
-		--kbd-background-color: #040607;
-
-		/* Palette */
-		--primary-color: var(--blue-color);
-		--accent-color: var(--yellow-color); /* Do not use with text */
-		--danger-color: var(--red-color);
-		--alert-color: var(--orange-color);
-		--success-color: var(--green-color);
 
 		/* Image recolorization */
 		--image-filter: grayscale(25%);
@@ -89,23 +73,12 @@
 	--background-color-close: #1E1E1E;
 
 	/* Color safe on black */
-	--blue-color: #36A2FF;
+	--blue-color: #008CD6;
 	--yellow-color: #FFC200;
+	--purple-color: #9F70CF;
 	--red-color: #F03331;
 	--orange-color: #F27D1F;
 	--green-color: #4B955E;
-
-	/* Elements colors */
-	--button-color: #070B0E;
-	--mark-color: #FFF0A3;
-	--kbd-background-color: #040607;
-
-	/* Palette */
-	--primary-color: var(--blue-color);
-	--accent-color: var(--yellow-color);
-	--danger-color: var(--red-color);
-	--alert-color: var(--orange-color);
-	--success-color: var(--green-color);
 
 	/* Image recolorization */
 	--image-filter: grayscale(25%);
@@ -116,43 +89,69 @@
 img:not([src*=".svg"]) {
 	filter: var(--image-filter);
 }
-/*
- * Rebase
+/**
+ * Rebase - version 23.02.14
  * Normalization of HTML elements
- * Forked from Bootstrap Reboot, licensed MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Manually forked from Bootstrap Reboot (https://github.com/twbs/bootstrap)
+ * Then fine-tuned using Sanitize.css (https://github.com/csstools/sanitize.css)
+ * https://github.com/saurabhchardereal/reset.css/, https://github.com/krshoss/gardevoir,
+ * and https://github.com/elad2412/the-new-css-reset/
  */
 
 /* Document
    ========================================================================== */
 
+/**
+ * 1. Inheriting box-sizing is better practice.
+ * Ref: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ *
+ * 2. Informs useragent stylesheets about system color preferences and apply
+ * respective styles
+ * Ref: https://github.com/w3c/csswg-drafts/issues/3299
+ *
+ * 3. Prevents adjustments of font size after orientation changes in iOS.
+ * Ref: https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+ *
+ * 4. Accessible line height
+ * Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#accessibility_concerns
+ *
+ * 5. Consistent `margin` and `padding` policy
+ * See the last section
+ */
+
 *,
 *::after,
 *::before {
-	box-sizing: inherit; /* Inheriting box-sizing is better practice */
+	box-sizing: inherit; /* 1 */
+	margin: 0; /* 5 */
+	padding: 0; /* 5 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	:root {
-		scroll-behavior: smooth;
-	}
+html {
+	box-sizing: border-box; /* 1 */
+	color-scheme: light dark; /* 2 */
+	-webkit-text-size-adjust: 100%; /* 3 */
+	text-size-adjust: 100%; /* 3 */
+	-webkit-tap-highlight-color: transparent; /* Remove the grey highlight on links in iOS */
+	font: 300 16px/1.5 sans-serif; /* 4 */
+}
+
+/**
+ * Smooth-scroll but not when searching
+ * Ref: https://css-tricks.com/fixing-smooth-scrolling-with-find-on-page/
+ */
+html:focus-within {
+	scroll-behavior: smooth; /* Somewhat opiniated. */
 }
 
 @media (prefers-reduced-motion: reduce) {
 	* {
-		animation: none;
+		animation: none !important;
+		scroll-behavior: auto !important; /* Smooth on normal, auto on reduced */
 	}
 }
 
-html {
-	box-sizing: border-box; /* Inheriting box-sizing is better practice */
-	font-family: sans-serif;
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
 ::selection {
-	background: #b3d4fc;
 	background: var(--selection-color, #b3d4fc);
 	color: currentColor;
 	text-shadow: none; /* Remove text-shadow in selection highlight */
@@ -162,51 +161,35 @@ html {
    ========================================================================== */
 
 body {
-	margin: 0;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #212529;
-	color: var(--main-color);
-	text-align: left;
-	background-color: #fff;
-	background-color: var(--background-color);
-	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	scroll-behavior: smooth; /* Somewhat opiniated. */
-	overflow-x: hidden; /* Somewhat opiniated. */
+	font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif);
+	color: var(--main-color, #212529);
+	background-color: var(--background-color, #fff);
+	overflow-x: hidden; /* Somewhat opinionated */
+	min-height: 100vh; /* Body takes all the page even if empty (opinionated) */
+	text-rendering: optimizeSpeed; /* Somewhat opinionated */
+	word-wrap: break-word; /* Somewhat opinionated */
 }
 
-[tabindex="-1"]:focus:not(:focus-visible) {
-	outline: 0 !important;
-}
-
-/* Body
+/* Typography
    ========================================================================== */
 
+/**
+ * 1. Correct the inheritance of border color in Firefox.
+ * 2. Add the correct box sizing in Firefox.
+ */
 hr {
-	box-sizing: content-box;
-	height: 0;
-	overflow: visible;
+	color: inherit; /* 1 */
+	box-sizing: content-box; /* 2 */
+	height: 0; /* 2 */
 }
 
 hr:not([size]) {
-	height: 1px;
+	height: 1px; /* 2 */
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin-top: 0;
-	margin-bottom: 0.5rem;
-}
-
-p {
-	margin-top: 0;
-	margin-bottom: 1rem;
-}
-
-/* Mobile-first & print-friendly abbreviations */
+/**
+ * Mobile-first & print-friendly abbreviations
+ */
 abbr[title] {
 	text-decoration: none;
 	border-bottom: 0;
@@ -220,60 +203,27 @@ abbr[title]::after {
 @media screen and (min-width: 1025px) {
 	abbr[title],
 	abbr[data-original-title] {
-		-webkit-text-decoration: underline dotted;
 		text-decoration: underline dotted;
-		cursor: help;
-		-webkit-text-decoration-skip-ink: none;
 		text-decoration-skip-ink: none;
+		cursor: help;
 	}
 	abbr[title]::after {
 		content: '';
 	}
 }
 
-
-address {
-	margin-bottom: 1rem;
-	font-style: normal;
-	line-height: inherit;
-}
-
-ol,
-ul,
-dl {
-	margin-top: 0;
-	margin-bottom: 1rem;
-}
-
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-	margin-bottom: 0;
-}
-
-dt {
-	font-weight: 600;
-}
-
-dd {
-	margin-bottom: 0.5rem;
-	margin-left: 0;
-}
-
-blockquote {
-	margin: 0 0 1rem;
-}
-
 b,
 strong {
-	font-weight: bolder;
+	font-weight: bolder; /* Add the correct font weight in Chrome, Edge and Safari */
 }
 
 small {
-	font-size: 80%;
+	font-size: 80%; /* Add the correct font size in all browsers */
 }
 
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height
+ */
 sub,
 sup {
 	position: relative;
@@ -286,6 +236,7 @@ sub {
 	bottom: -0.25em;
 }
 
+
 sup {
 	top: -0.5em;
 }
@@ -293,11 +244,13 @@ sup {
 /* Links
    ========================================================================== */
 a {
-	color: cornflowerblue;
 	color: var(--primary-color, cornflowerblue);
 	text-decoration: none;
 }
 
+/**
+ * Style anchors without styling links
+ */
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover,
 a:not([href]):not([class]):focus {
@@ -305,9 +258,13 @@ a:not([href]):not([class]):focus {
 	text-decoration: none;
 }
 
+/**
+ * Style global links without styling elements links
+ */
 a:not([class]):hover,
-a:not([class]):focus { /* Style global links without styling elements links */
+a:not([class]):focus {
 	text-decoration: underline;
+	text-decoration-skip-ink: auto;
 }
 
 /* Code
@@ -317,79 +274,74 @@ pre,
 code,
 kbd,
 samp {
-	font-family: SFMono-Regular, Menlo, "DejaVu Sans Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	font-size: 87.5%;
+	font-family: var(--font-monospace), monospace;
+	font-size: 87.5%; /* Somewhat opinionated */
 }
 
 pre {
 	color: currentColor;
 	display: block;
-	margin-top: 0;
-	margin-bottom: 1rem;
 	overflow: auto;
-	white-space: pre;
+	white-space: pre; /* Somewhat opinionated */
 }
-
-pre code { /* Account for some code outputs that place code tags in pre tags */
+/**
+ * Account for some code outputs that place code tags in pre tags
+ */
+pre code {
 	font-size: inherit;
 	color: inherit;
 	word-break: normal;
-	white-space: pre;
+	white-space: pre; /* Somewhat opinionated */
 }
 
 code {
 	overflow-wrap: break-word;
 	white-space: pre-wrap;
 }
-
-a > code { /* Streamline the style when inside anchors to avoid broken underline and more */
+/**
+ * Streamline the style when inside anchors to avoid broken underline and more
+ */
+a > code {
 	color: inherit;
-}
-
-/* Figures
-   ========================================================================== */
-
-figure { /* Apply a consistent margin strategy (matches our type styles) */
-	margin: 0 0 1rem;
 }
 
 /* Images and media
    ========================================================================== */
 
-.img,
-img,
-svg,
-video,
-audio,
-canvas,
-iframe {
+audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
 }
 
-
-svg {
+/**
+ * Somewhat opinionated but you'll pay me a beer in return soon enough
+ */
+svg:not([fill]) {
 	overflow: hidden;
-	fill: currentColor; /* Somewhat opinionated but you'll pay me a beer in return soon enough */
+	fill: currentColor;
 }
 
 /* Tables
    ========================================================================== */
 
-table { /* Prevent double borders */
-	border-collapse: collapse;
+/**
+ * 1. Collapse border spacing in all browsers (opinionated).
+ * 2. Correct table border color in Chrome, Edge, and Safari.
+ * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
+ */
+table {
+	border-collapse: collapse; /* 1 */
 	caption-side: bottom;
+	border-color: currentColor; /* 2 */
+	text-indent: 0; /* 3 */
 }
 
-caption {
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	color: #6c757d;
-	text-align: left;
-}
-
+/**
+ * 1. Matches default `<td>` alignment by inheriting `text-align`
+ * 2. Fix alignment for Safari
+ */
 th {
-	text-align: inherit; /* Matches default `<td>` alignment by inheriting `text-align` */
-	text-align: -webkit-match-parent; /* Fix alignment for Safari */
+	text-align: inherit; /* 1 */
+	text-align: -webkit-match-parent; /* 2 */
 }
 
 /* Forms
@@ -399,135 +351,111 @@ label {
 	display: inline-block; /* Allow labels to use `margin` for spacing */
 }
 
-button {
-	border-radius: 0; /* Remove the default `border-radius` that macOS Chrome add */
-}
-
-button:focus:not(:focus-visible) { /* Remove the default `border-radius` that macOS Chrome add */
-	outline: 0;
-}
-
+label,
 input,
 button,
 select,
 optgroup,
 textarea {
-	margin: 0; /* Remove the margin in Firefox and Safari */
-	font-family: inherit;
-	font-size: inherit;
-	font-style: inherit;
-	line-height: inherit;
-}
-
-button,
-select { /* Remove the inheritance of text transform in Firefox */
-	text-transform: none;
-}
-
-select { /* Remove the inheritance of word-wrap in Safari */
-	word-wrap: normal;
-}
-
-select:disabled { /* Undo the opacity change from Chrome */
-  opacity: 1;
-}
-
-/* Remove the dropdown arrow only from text type inputs built with datalists in Chrome */
-[list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator {
-  display: none !important;
-}
-
-:disabled {
-	cursor: not-allowed;
-	pointer-events: none;
-	box-shadow: none !important;
+	font: inherit; /* Inherit font family and line height */
 }
 
 button,
 [type="button"],
 [type="reset"],
 [type="submit"],
-[type="image"] {
+::file-selector-button,
+::-webkit-file-upload-button {
 	-webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
 }
 
 [role=button],
-button:not(:disabled),
-[type="button"]:not(:disabled),
-[type="reset"]:not(:disabled),
-[type="submit"]:not(:disabled),
-[type="image"]:not(:disabled) {
+button,
+select,
+summary {
 	cursor: pointer; /* Add "hand" cursor to non-disabled button elements */
 }
 
-::-moz-focus-inner { /* Remove inner border and padding from Firefox */
-	padding: 0;
+/**
+ * 1. Remove the inheritance of text transform in Firefox
+ *
+ * 2. Remove the inheritance of word-wrap in Safari
+ * Ref: https://github.com/twbs/bootstrap/issues/24990
+ */
+button {
+	text-transform: none; /* 1 */
+}
+
+select {
+	text-transform: none; /* 1 */
+	word-wrap: normal; /* 2 */
+}
+
+select:disabled {
+	opacity: 1; /* Undo the opacity change from Chrome */
+}
+
+/**
+ * Remove the dropdown arrow only from text type inputs built with datalists in Chrome
+ * Ref: https://stackoverflow.com/a/54997118
+ */
+[list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+/**
+ * Remove inner border from Firefox
+ */
+::-moz-focus-inner {
 	border-style: none;
 }
 
-textarea { /* Textareas should really only resize vertically */
-	overflow: auto;
-	resize: vertical;
+textarea {
+	resize: vertical; /* Textareas should really only resize vertically */
 }
 
+/**
+ * 1. Fieldset behave like a div
+ *
+ * 2. Reset the default outline behavior so fieldsets don't affect page
+ * layout
+ */
 fieldset {
-	min-width: 0;
-	padding: 0;
-	margin: 0;
-	border: 0;
+	min-width: 0; /* 1 */
+	border: 0; /* 2 */
 }
 
+/**
+ * 1. `legend` will behave like a block element
+ * 2. Fix wrapping bug.
+ * Ref: https://github.com/twbs/bootstrap/issues/29712
+ */
 legend {
-	float: left; /* the legend will behave like a block element */
+	float: left; /* 1 */
 	width: 100%;
-	padding: 0;
 	margin-bottom: 0.5rem;
 	font-size: 1.5rem;
 	line-height: inherit;
 }
 
 legend + * {
-	clear: left; /* Fix wrapping bug */
+	clear: left; /* 2 */
 }
 
-progress {
-	vertical-align: baseline;
-}
-
-::-webkit-datetime-edit-fields-wrapper,
-::-webkit-datetime-edit-text,
-::-webkit-datetime-edit-minute,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-year-field {
-	padding: 0; /* Fix height of inputs with a type of datetime-local, date, month, week, or time */
-}
-
-::-webkit-inner-spin-button {
-	height: auto;
-}
-
+/**
+ * 1. Overrides the extra rounded corners on search inputs in iOS
+ * 2. Correct the outline style in Safari.
+ */
 [type="search"] {
-	outline-offset: -2px; /* Correct the outline style in Safari */
-	-webkit-appearance: textfield; /* This overrides the extra rounded corners on search inputs in iOS */
+	outline-offset: -2px; /* 1 */
+	-webkit-appearance: textfield; /* 2 */
 }
 
 ::-webkit-search-decoration {
 	-webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
 }
 
-::-webkit-color-swatch-wrapper {
-	padding: 0; /* Remove padding around color pickers in webkit browsers */
-}
-
-::file-selector-button,
-::-webkit-file-upload-button {
-	font: inherit; /* Inherit font family and line height for file input buttons */
-	-webkit-appearance: button; /* Correct the inability to style clickable types in iOS and Safari */
-}
-
-/* Interactive
+/* Misc
    ========================================================================== */
 
 output {
@@ -547,24 +475,74 @@ progress {
 	vertical-align: baseline; /* Add the correct vertical alignment in Chrome, Firefox, and Opera */
 }
 
-[hidden]
+/**
+ * 1. Remove the list style on navigation lists in all browsers (opinionated).
+ *
+ * 2. Reset list style when using the role=["list"] attribute.
+ * Ref: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+ * Note: as Jan. 2023, VoiceOver doesn't ignore list semantics in nav.
+ */
+nav ol, /* 1 */
+nav ul, /* 1 */
+ul[role="list"], /* 2 */
+ol[role="list"] { /* 2 */
+	list-style: none;
+}
+
+[hidden],
 .hidden {
   display: none !important;
 }
-/* Utilities */
 
-.inline-block { 
-	display: inline-block; 
+/* Consistent margin policy
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6, dd {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
 }
 
-.inline-block:not(:last-child) { /* For lists, needs to be tested */
-	margin-right: 0.5rem;
-	color: lightgray;
+p, ol, ul, ul, pre {
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
+
+ol:not([role="list"]),
+ul:not([role="list"]) {
+	padding-left: 2rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+	margin-bottom: 0;
+}
+
+blockquote, figure {
+	margin: 0 0 1rem;
+}
+/**
+ * Croissant: Helpers
+ */
+
+/* Blocks
+   ========================================================================== */
+
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+/* Float
+   ========================================================================== */
 
 .clearfix::after {
 	clear: both;
-	content: ' ';
+	content: " ";
 	display: table;
 }
 
@@ -576,10 +554,13 @@ progress {
 	float: right;
 }
 
-.square {
+/* Shapes
+   ========================================================================== */
+
+[height].square,
+[width].square {
 	object-fit: cover;
-	height: var(--width, 512px);
-	width: var(--width, 512px);
+	aspect-ratio: 1;
 }
 
 .rounded {
@@ -587,21 +568,24 @@ progress {
 }
 
 .rounded-circle {
-	border-radius: 100% !important;
+	border-radius: 50% !important;
 }
 
 .rounded-pill {
-	border-radius: 999em !important;
+	border-radius: 50rem !important;
 }
 
-.avatar { /* Basically, alias to .rounded-circle .thumbnail .square */
-	border-radius: 100%;
-	object-fit: cover;
-	height: var(--width, 512px);
-	width: var(--width, 512px);
-	padding: 0.25rem;
-	background-color: var(--background-color-close, #FFFFFF);
-	/*border: 1px solid var(--background-color-far, #E1E1E1);*/
+/* Shadows
+   ========================================================================== */
+
+.card {
+	border-radius: 0.25rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.card.is-background {
+	background: rgba(127,127,127,0.05);
 }
 
 .card,
@@ -622,11 +606,6 @@ progress {
 	box-shadow: none;
 }
 
-.card {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
 .animated-raised:hover,
 .animated-raised:focus {
 	position: relative;
@@ -638,7 +617,12 @@ progress {
 	top: 0;
 }
 
-/* Stretched link, must be in relative parent */
+/* Misc
+   ========================================================================== */
+
+/**
+ * Stretched link, must be in relative parent
+ */
 .stretched-link::after {
 	position: absolute;
 	top: 0;
@@ -647,22 +631,36 @@ progress {
 	left: 0;
 	z-index: 1;
 	content: "";
-}/* Headings
+}
+
+/**
+ * As of 02/2023, we still have to do this -_-
+ */
+.no-select {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+/**
+ * Croissant: Base
+ */
+
+/* Headings
    ========================================================================== */
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-	margin-bottom: 0.5rem;
+h1, h2, h3, h4, h5, h6 {
 	font-weight: 400; /* Size matters. */
 	line-height: 1.2;
 }
 
-h1, .h1 { font-size: 2.5rem; }
-h2, .h2 { font-size: 2rem; }
-h3, .h3 { font-size: 1.75rem; }
-h4, .h4 { font-size: 1.5rem; }
-h5, .h5 { font-size: 1.25rem; }
-h6, .h6 { font-size: 1rem; font-weight: 500; }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; font-weight: 500; }
 
 
 /* Horizontal rules
@@ -701,21 +699,8 @@ small,
 	font-weight: 400;
 }
 
-mark,
-.mark {
-	padding: 0.2em;
-	background-color: var(--mark-color, #FCF8E3);
-}
-
-
 /* Lists
    ========================================================================== */
-
-.list-unstyled,
-.list-inline {
-	padding-left: 0;
-	list-style: none;
-}
 
 .list-inline li {
 	display: inline-block;
@@ -728,21 +713,18 @@ mark,
 /* Blockquotes & quotes
    ========================================================================== */
 
-blockquote,
-.blockquote {
-    font-size: 1.25rem;
+blockquote {
+	font-size: 1.25rem;
 }
 
-blockquote footer,
-.blockquote-footer {
+blockquote footer {
 	display: block;
 	font-size: 80%;
 	color: currentColor;
 	opacity: 0.6;
 }
 
-blockquote footer::before,
-.blockquote-footer::before {
+blockquote footer::before {
 	content: '—\a0';
 }
 
@@ -755,25 +737,17 @@ q:lang(fr) { quotes: '«\a0' '\a0»' '“\a0' '\a0”'; } /* Always a non-breaka
 /* Images
    ========================================================================== */
 
-/* Responsive image as opt-in
-If applied to all images, it breaks third-party widgets.
-See https://github.com/twbs/bootstrap/issues/18178 */
+/**
+ * Responsive image as opt-in
+ * If applied to all images, it breaks third-party widgets.
+ * Ref: https://github.com/twbs/bootstrap/issues/18178
+ */
 .fit {
 	max-width: 100%;
 	height: auto;
 }
 
-/* Thumbnail image */
-.thumbnail {
-	max-width: 100%;
-	height: auto;
-	padding: 0.25rem;
-	background-color: var(--background-color-close, #FFFFFF);
-	border: 1px solid var(--background-color-far, #E1E1E1);
-	border-radius: 0.25rem;
-}
-
-/* See https://archive.hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/ */
+/* Ref: https://archive.hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/ */
 .full-bleed {
 	width: 100vw;
 	height: auto;
@@ -784,38 +758,35 @@ See https://github.com/twbs/bootstrap/issues/18178 */
 /* Figures
    ========================================================================== */
 
-figure,
-.figure {
+figure {
 	display: inline-block; /* Ensures the caption's text aligns with the image. */
 }
 
-figure img,
-.figure-img {
+figure img {
 	margin-bottom: 0.5rem;
 	line-height: 1;
 }
 
-figcaption,
-.figure-caption {
+figcaption {
 	font-size: 90%;
 	color: currentColor;
 	opacity: 0.6;
+	text-align: center;
 }
 /* Code
    ========================================================================== */
 
 /* Inline code */
 code {
-	color: var(--green-color, #41814F);
+	color: var(--success-color, #41814F);
 }
 
 /* Keyboard */
 kbd {
-	padding: 0.2rem 0.4rem;
-	color: #444;
-	background-color: var(--kbd-background-color, #F7F7F7);
-	box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 0 2px var(--background-color-close, #FFFFFF) inset;
-	border-radius: 0.2rem;
+	padding: 0.25rem 0.5rem;
+	background-color: var(--background-color, #F4F4F4);
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.2), 0 0 0 2px var(--background-color-close, #fff) inset;
+	border-radius: 0.25rem;
 }
 
 kbd kbd {
@@ -824,6 +795,9 @@ kbd kbd {
 	background: none;
 	box-shadow: none;
 }
+/**
+ * Module: Buttons
+ */
 
 .button,
 button,
@@ -834,129 +808,80 @@ button,
 	cursor: pointer;
 	display: inline-block;
 	height: 2rem;
-	line-height: 2rem;
-	text-align: center;
-	padding: 0 1rem;
 	margin: 0.5rem 0;
+	padding: 0 0.5rem;
+	line-height: 2rem;
 	white-space: nowrap;
+	text-align: center;
 }
 
-.button.rounded-circle,
-button.rounded-circle,
-input[type="submit"].rounded-circle,
-input[type="reset"].rounded-circle,
-input[type="button"].rounded-circle,
-input[type="image"].rounded-circle {
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]).rounded-circle {
 	width: 2rem;
 	padding: 0;
-}.button,
+}
+/* Button skin
+   ========================================================================== */
+
+.button,
 button,
 [type="submit"],
 [type="reset"],
 [type="button"],
 [type="image"] {
-	background: var(--button-color, #E1E1E1);
-	color: currentColor;
+	background: #7F7F7F;
+	color: #fff;
 	border: none;
-	border-radius: 3px;
-	/*text-transform: uppercase;*/
+	border-radius: 0.25rem;
 }
 
-.button:hover,
-button:hover,
-[type="submit"]:hover,
-[type="reset"]:hover,
-[type="button"]:hover,
-[type="image"]:hover,
-.button:focus,
-button:focus,
-[type="submit"]:focus,
-[type="reset"]:focus,
-[type="button"]:focus,
-[type="image"]:focus {
-	-webkit-filter: saturate(95%) brightness(105%);
-	filter: saturate(95%) brightness(105%);
-	color: currentColor;
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]):hover,
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]):focus {
+	-webkit-filter: saturate(75%) brightness(125%);
+	filter: saturate(75%) brightness(125%);
 	text-decoration: none;
 }
 
-.button:active,
-button:active,
-[type="submit"]:active,
-[type="reset"]:active,
-[type="button"]:active,
-[type="image"]:active {
-	-webkit-filter: brightness(115%);
-	filter: brightness(115%);
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]):active {
+	-webkit-filter: brightness(125%);
+	filter: brightness(125%);
 	box-shadow: none !important;
 }
 
-.button.disabled,
-button:disabled,
-[type="submit"]:disabled,
-[type="reset"]:disabled,
-[type="button"]:disabled,
-[type="image"]:disabled {
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]):disabled {
 	opacity: 0.6;
 }
 
-.button.is-primary,
-button.is-primary,
-[type="submit"].is-primary,
-[type="reset"].is-primary,
-[type="button"].is-primary,
-[type="image"].is-primary  {
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]).is-primary {
 	background: var(--primary-color, #0071AD);
-	color: #FFFFFF;
 }
 
-.button.is-accent,
-button.is-accent,
-[type="submit"].is-accent,
-[type="reset"].is-accent,
-[type="button"].is-accent,
-[type="image"].is-accent  {
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]).is-accent {
 	background: var(--accent-color, #FFC200);
-	color: #FFFFFF;
 }
 
-.button.is-danger,
-button.is-danger,
-[type="submit"].is-danger,
-[type="reset"].is-danger,
-[type="button"].is-danger,
-[type="image"].is-danger {
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]).is-danger {
 	background: var(--danger-color, #DE2A2A);
-	color: #FFFFFF;
 }
 
-.button.is-alert,
-button.is-alert,
-[type="submit"].is-alert,
-[type="reset"].is-alert,
-[type="button"].is-alert,
-[type="image"].is-alert {
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]).is-alert {
 	background: var(--alert-color, #C44F0C);
-	color: #FFFFFF;
 }
 
-.button.is-success,
-button.is-success,
-[type="submit"].is-success,
-[type="reset"].is-success,
-[type="button"].is-success,
-[type="image"].is-success {
+:where(.button, button,[type="submit"],[type="reset"],[type="button"],[type="image"]).is-success {
 	background: var(--success-color, #5C7E28);
-	color: #FFFFFF;
 }
+
+/* Button variant: Flat
+   ========================================================================== */
 
 .button--flat {
+	color: currentColor;
 	background: transparent !important;
 }
 
 .button--flat:hover,
 .button--flat:focus {
-	background: var(--background-color-far, lightgrey) !important;
+	background: rgba(127,127,127,0.1) !important;
 }
 
 .button--flat.is-primary {
@@ -978,7 +903,7 @@ button.is-success,
 .button--flat.is-success {
 	color: var(--success-color, #5C7E28);
 }
-/* Module : color-scheme-toggle
+/** Module : color-scheme-toggle
 
 	<noscript>
 		<style>
@@ -986,7 +911,7 @@ button.is-success,
 		</style>
 	</noscript>
 
-	<button type="button" class="color-scheme-toggle rounded-circle"></button>
+	<button type="button" aria-hidden="true" class="color-scheme-toggle rounded-circle"></button>
 
 	Needs croissant.js > Spoon: color-mode
    ========================================================================== */
@@ -1018,16 +943,17 @@ button.is-success,
 	/* filter: brightness(0.43) sepia(1) saturate(2.2) hue-rotate(79deg); /* Green */
 	outline: 0;
 }
-/* Module : content
+/**
+ * Module: Content
+ */
 
+/* Animated links
    ========================================================================== */
-
-/* Links */
-.content a:not(.button) {
+.content a:not([class]) {
 	position: relative;
 }
 
-.content a:not(.button)::after {
+.content a:not([class])::after {
 	border-top: 0.1em solid var(--primary-color, #0071AD);
 	content: "";
 	position: absolute;
@@ -1037,28 +963,31 @@ button.is-success,
 	transition: right 0.4s cubic-bezier(0,0.5,0,1);
 }
 
-.content a:not(.button):hover,
-.content a:not(.button):focus {
+.content a:not([class]):hover,
+.content a:not([class]):focus {
 	text-decoration: none;
 }
 
-.content a:not(.button):hover::after,
-.content a:not(.button):focus::after {
+.content a:not([class]):hover::after,
+.content a:not([class]):focus::after {
 	right: 0;
 }
+/**
+ * Module: Forms
+ */
+
 input,
 textarea,
 select {
 	-moz-appearance: none !important;
 	-webkit-appearance: none !important;
 	appearance: none !important;
-	-ms-touch-action: manipulation;
 	touch-action: manipulation;
-	display: block;
+	display: inline-block;
 	width: 100%;
 	height: 2rem;
 	line-height: 2rem;
-	padding: 0 1rem;
+	padding: 0 0.5rem;
 	margin: 0.5rem 0;
 }
 
@@ -1073,172 +1002,74 @@ textarea {
 	width: auto;
 }
 
-[type="file"],
-[type="color"],
-[type="image"],
-[type="range"] {
-	border: none;
-	border-bottom: none; /* Firefox bug with range */
-	cursor: pointer;
-}
-
 [type="checkbox"],
-[type="radio"] { /* Reminder: https://coderwall.com/p/a7tbrq/protip-if-you-want-to-style-checkboxes-radio-buttons-or-select-menus-in-firefox-don-t-bother */
+[type="radio"] {
 	height: 1.25rem;
 	width: 1.25rem;
 	padding: 0;
 	margin: 0.5rem;
 	vertical-align: -0.75rem; /* - (margin + (height - 1rem)) */
-	/*background: inherit;*/
 	position: relative;
-	background: none !important;
+	cursor: pointer;
 	border: none !important;
 	box-shadow: none !important;
-	display: inline-block;
-	cursor: pointer;
 	outline: none !important;
+	background: transparent;
 }
 
-/* Skin */
+[type="file"],
+[type="color"],
+[type="image"],
+[type="range"] {
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+/* Form skin
+   ========================================================================== */
 input,
 textarea,
 select {
 	color: currentColor;
-	/*background-color: transparent;*/
-	background-color: var(--background-color-close, #FFFFFF);
-	background-clip: padding-box;
-	border: 1px solid rgba(125,125,125,0.3);
-	border-radius: 3px;
+	background-color: var(--background-color-close, #fff);
+	border: 1px solid rgba(127,127,127,0.25);
+	border-radius: 0.25rem;
 	transition: border-color 0.20s ease-in-out, box-shadow 0.20s ease-in-out;
 }
 
-input::placeholder,
-textarea::placeholder,
-select::placeholder {
+::placeholder {
 	opacity: 0.6;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+:where(input,textarea,select):focus {
 	outline: none;
 	border-color: var(--primary-color, #0071AD);
 	box-shadow: 0 0 0 1px var(--primary-color, #0071AD) inset;
 }
 
-input:disabled,
-textarea:disabled,
-select:disabled {
-	background-color: rgba(125,125,125,0.1);
+:where(input,textarea,select):disabled {
+	background-color: rgba(127,127,127,0.1);
 	color: currentColor;
 	cursor: default;
 }
 
-input:required,
-textarea:required,
-select:required {
+:where(input,textarea,select):required {
 	border-color: initial;
 	box-shadow: none;
 }
 
-input:not(:focus):invalid,
-textarea:not(:focus):invalid,
-select:not(:focus):invalid {
+:where(input,textarea,select):not(:focus):invalid {
 	border-color: var(--danger-color, #DE2A2A);
 	box-shadow: 0 0 0 1px var(--danger-color, #DE2A2A) inset;
 }
 
-/* ===============================
-	      Alternate input
-   =============================== */
+/* Checkboxes and radio buttons
+   ========================================================================== */
 
-.input-alternate {
-	border-color: transparent;
-	border-bottom-color: rgba(125,125,125,0.3);
-	border-radius: 0 !important;
-	background: transparent no-repeat;
-	background-image: linear-gradient(to bottom, var(--primary-color, #0071AD), var(--primary-color, #0071AD));
-	background-size: 0 2px;
-	background-position: 50% 100%;
-	transition: border-bottom-color 0.25s ease-in-out, background-size 0.25s ease-in-out;
-}
-
-.input-alternate:focus {
-	border-color: transparent;
-	border-bottom-color: transparent;
-	box-shadow: none !important;
-	background-size: 100% 2px;
-}
-
-.input-alternate:not(:focus):invalid {
-	border-color: transparent;
-	box-shadow: none !important;
-	border-bottom-color: transparent;
-	background-image: linear-gradient(to bottom, var(--danger-color, #DE2A2A), var(--danger-color, #DE2A2A));
-	background-size: 100% 2px;
-}
-
-/* ===============================
-	      Floating labels
-   =============================== */
-.floating-label {
-	position: relative;
-	width: 100%;
-	margin-top: 1rem;
-}
-
-.floating-label input:placeholder-shown + .floating-label-text,
-.floating-label textarea:placeholder-shown + .floating-label-text {
-	position: absolute;
-	top: 0.75rem;
-	left: 1rem;
-	opacity: 0.5;
-	transition: all 0.3s ease-in-out;
-}
-
-.floating-label input:not(:placeholder-shown) + .floating-label-text,
-.floating-label textarea:not(:placeholder-shown) + .floating-label-text {
-	position: absolute;
-	top: -0.75rem;
-	color: currentColor;
-	font-size: 0.8rem;
-	opacity: 1;
-	transition: all 0.3s ease-in-out;
-}
-
-.floating-label input:not(:placeholder-shown):focus + .floating-label-text,
-.floating-label textarea:not(:placeholder-shown):focus + .floating-label-text {
-	color: var(--primary-color, #0071AD);
-}
-
-.floating-label input:not(:placeholder-shown):not(:focus):invalid + .floating-label-text,
-.floating-label textarea:not(:placeholder-shown):not(:focus):invalid + .floating-label-text {
-	color: var(--danger-color, #DE2A2A);
-}
-
-.floating-label .floating-label-error,
-.floating-label .floating-label-error {
-	position: absolute;
-    bottom: -0.75rem;
-	opacity: 0;
-	color: var(--danger-color, #DE2A2A);
-	transition: all 0.3s ease-in-out;
-	font-size: 0.8rem;
-}
-
-.floating-label input:not(:placeholder-shown):not(:focus):invalid ~ .floating-label-error,
-.floating-label textarea:not(:placeholder-shown):not(:focus):invalid ~ .floating-label-error {
-	opacity: 1;
-}
-
-/* ===============================
-	Checkboxes and radio buttons
-   =============================== */
-
-[type="checkbox"]::before,
-[type="radio"]::before,
-[type="checkbox"]::after,
-[type="radio"]::after {
+:where([type="checkbox"],[type="radio"])::before,
+:where([type="checkbox"],[type="radio"])::after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -1250,7 +1081,7 @@ select:not(:focus):invalid {
 
 /* Radio buttons */
 [type="radio"]::before {
-	border: 2px solid rgba(125,125,125,1);
+	border: 2px solid rgb(127,127,127);
 	border-radius: 50%;
 }
 
@@ -1273,8 +1104,8 @@ select:not(:focus):invalid {
 
 /* Checkboxes */
 [type="checkbox"]::after {
-	border: 2px solid rgba(125,125,125,1);
-	border-radius: 3px;
+	border: 2px solid rgb(127,127,127);
+	border-radius: 0.25rem;
 	background-color: transparent;
 }
 
@@ -1295,7 +1126,7 @@ select:not(:focus):invalid {
 }
 
 [type="checkbox"]:not(.checkbox--alt):checked::before {
-	border-color: #FFFFFF;
+	border-color: #fff;
 }
 
 /* Alternative .checkbox--alt checkboxes */
@@ -1322,7 +1153,7 @@ select:not(:focus):invalid {
 	-moz-appearance: none !important;
 	appearance: none !important;
 	user-select: none;
-	-webkit-tap-highlight-color:transparent;
+	-webkit-tap-highlight-color: transparent;
 	cursor: pointer;
 	display: inline-block;
 	color: transparent;
@@ -1337,7 +1168,7 @@ select:not(:focus):invalid {
 	width: 2.5rem;
 	height: 1.25rem;
 	border-radius: 100px;
-	background-color: #AAAAAA;
+	background-color: #aaa;
 	opacity: 0.5;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.3) inset;
 	border:none !important;
@@ -1363,7 +1194,7 @@ select:not(:focus):invalid {
 }
 
 .switch::before {
-	background-color: #FFFFFF;
+	background-color: #fff;
 }
 
 .switch:checked::before,
@@ -1372,7 +1203,7 @@ select:not(:focus):invalid {
 }
 
 .switch:disabled::after {
-	background-color: #AAAAAA;
+	background-color: #aaa;
 	opacity: 0.3;
 }
 
@@ -1381,9 +1212,8 @@ select:not(:focus):invalid {
 	opacity: 1;
 }
 
-/* ===============================
-	            Colors
-   =============================== */
+/* Colors
+   ========================================================================== */
 .is-primary:checked::before {
 	border-color: var(--primary-color, #0071AD);
 }
@@ -1427,7 +1257,96 @@ select:not(:focus):invalid {
 .is-success:checked::after,
 .is-success.switch:checked::before  {
 	background-color: var(--success-color, #5C7E28);
-}input[type="checkbox"].navbar-burger {
+}
+/* Input alternate
+   ========================================================================== */
+
+.input-alternate {
+	border-color: transparent;
+	border-bottom-color: rgba(125,125,125,0.3);
+	border-radius: 0 !important;
+	background: transparent no-repeat;
+	background-image: linear-gradient(to bottom, var(--primary-color, #0071AD), var(--primary-color, #0071AD));
+	background-size: 0 2px;
+	background-position: 50% 100%;
+	transition: border-bottom-color 0.25s ease-in-out, background-size 0.25s ease-in-out;
+}
+
+.input-alternate:focus {
+	border-color: transparent;
+	border-bottom-color: transparent;
+	box-shadow: none !important;
+	background-size: 100% 2px;
+}
+
+.input-alternate:not(:focus):invalid {
+	border-color: transparent;
+	box-shadow: none !important;
+	border-bottom-color: transparent;
+	background-image: linear-gradient(to bottom, var(--danger-color, #DE2A2A), var(--danger-color, #DE2A2A));
+	background-size: 100% 2px;
+}
+/**
+ * Module: Forms with floating labels
+
+   Usage:
+   <label class="floating-label">
+		<input type="text" placeholder=" ">
+		<span class="floating-label-text">Some text</span>
+   </label>
+ */
+
+.floating-label :where(input,textarea) {
+	display: block !important;
+}
+
+.floating-label {
+	position: relative;
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.floating-label :where(input,textarea):placeholder-shown + .floating-label-text {
+	position: absolute;
+	top: 0.75rem;
+	left: 1rem;
+	opacity: 0.5;
+	transition: all 0.3s ease-in-out;
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown) + .floating-label-text {
+	position: absolute;
+	top: -0.75rem;
+	color: currentColor;
+	font-size: 0.8rem;
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown):focus + .floating-label-text {
+	color: var(--primary-color, #0071AD);
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown):not(:focus):invalid + .floating-label-text {
+	color: var(--danger-color, #DE2A2A);
+}
+
+.floating-label .floating-label-error {
+	position: absolute;
+    bottom: -0.75rem;
+	opacity: 0;
+	color: var(--danger-color, #DE2A2A);
+	transition: all 0.3s ease-in-out;
+	font-size: 0.8rem;
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown):not(:focus):invalid ~ .floating-label-error {
+	opacity: 1;
+}
+/* Navbar burger
+   ========================================================================== */
+
+[type="checkbox"].navbar-burger {
 	position: absolute;
 	left: -200vw;
 	opacity: 0;
@@ -1438,11 +1357,9 @@ select:not(:focus):invalid {
 	flex-direction: column;
 	justify-content: center;
 	order: 9999;
-	/*margin: 1rem;*/
 	width: 1.5rem;
 	height: 1.5rem;
 	padding: 0;
-	/* outline: 0 !important; */
 	border: 0;
 	cursor: pointer;
 	-webkit-tap-highlight-color: transparent;
@@ -1462,7 +1379,7 @@ select:not(:focus):invalid {
 	width: 100%;
 	height: 0.187rem; /* height / 8 */
 	border-radius: 3px;
-	display: inline-block;	
+	display: inline-block;
 	background: currentColor;
 }
 
@@ -1505,6 +1422,8 @@ select:not(:focus):invalid {
 .navbar-burger:focus .navbar-burger-bun::after {
 	transform: translate3d(0,-50%,0) rotate3d(0,0,1,-45deg);
 }
+/* Navbar burger alternate
+   ========================================================================== */
 
 /* Dots */
 /* .burger--dots */
@@ -1516,7 +1435,7 @@ select:not(:focus):invalid {
 		width: 0.187rem; /* height / 8 */
 		height: 0.187rem; /* height / 8 */
 		border-radius: 3px;
-		display: inline-block;	
+		display: inline-block;
 	}
 }
 
@@ -1530,8 +1449,10 @@ select:not(:focus):invalid {
 
 /* Plus */
 
-/* Minus *//* Navbar
-   ========================================================================== */
+/* Minus */
+/**
+ * Module: Navbar
+ */
 
 .navbar {
 	display: grid;
@@ -1582,19 +1503,21 @@ select:not(:focus):invalid {
 	.navbar-burger {
 		display: none !important;
 	}
-	.navbar-menu {		
+	.navbar-menu {
 		flex-direction: row;
+		flex-wrap: wrap;
 		position: relative;
 		top: 0;
 		margin: 0;
 		padding: 0;
 		width: auto;
 	}
-}/* Navbar skin
+}
+/* Navbar skin
    ========================================================================== */
 
 .navbar {
-	background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0));
+	background: rgba(0,0,0,.8);
 	color: #fff;
 }
 .navbar a,
@@ -1608,11 +1531,11 @@ select:not(:focus):invalid {
 	border-bottom: 1px solid #010101;
 }
 .navbar-menu a:hover {
-	background: rgba(125,125,125,0.2);
+	background: rgba(127,127,127,0.2);
 }
 .navbar-menu .active {
 	box-shadow: inset 2px 0 0 0; /* Inherits color, inset */
-	background: rgba(125,125,125,0.2);
+	background: rgba(127,127,127,0.2);
 }
 @media screen and (min-width: 44rem) {
 	.navbar-menu {
@@ -1623,7 +1546,8 @@ select:not(:focus):invalid {
 		box-shadow: inset 0 2px 0 0; /* Inherits color, inset */
 		background: transparent;
 	}
-}/* Module : Profile
+}
+/* Module : Profile
 
    <figure class="profile-picture">
        <img src="profile.png" class="avatar">
@@ -1704,18 +1628,30 @@ select:not(:focus):invalid {
 }
 .scroller-link:hover,
 .scroller-link:focus {
-	-webkit-filter: saturate(95%) brightness(105%);
-	filter: saturate(95%) brightness(105%);
+	-webkit-filter: saturate(75%) brightness(125%);
+	filter: saturate(75%) brightness(125%);
 }
 .scroller-link:active {
-	-webkit-filter: brightness(115%);
-	filter: brightness(115%);
+	-webkit-filter: brightness(125%);
+	filter: brightness(125%);
 }
 @media print {
 	.scroller {
 		display: none !important;
 	}
 }
+/* Module: Tabs
+
+   <div class="tabs">
+		<input id="tab-1" name="tabs" class="tab-input" checked="checked" type="radio">
+		<label for="tab-1" class="tab" role="tab" aria-selected="false" aria-controls="tab-panel-1" aria-expanded="false" tabindex="0">Tab title</label>
+		<section class="tab-panel" id="tab-panel-1" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+			...
+		</section>
+   </div>
+
+   ========================================================================== */
+
 .tabs {
 	width: 100%;
 	display: flex;
@@ -1777,13 +1713,14 @@ select:not(:focus):invalid {
 .tabs .tab-input:checked + .tab {
 	cursor: default;
 }
+/* Tabs skin
+   ========================================================================== */
 .tab {
 	display: inline-block;
 	padding: 0.5rem;
 	margin-bottom: 1rem;
 	text-align: center;
-	color: currentColor; 
-	/*border-bottom: 1px solid currentColor;*/
+	color: currentColor;
 	opacity: 0.6;
 }
 
@@ -1791,7 +1728,6 @@ select:not(:focus):invalid {
 .tab:active,
 .tab:focus {
 	box-shadow: inset 0 -2px 0 0 var(--primary-color, #0071AD);
-	/*border-bottom: 1px solid var(--primary-color, #0071AD);*/
 	opacity: 1;
 }
 
@@ -1800,10 +1736,12 @@ select:not(:focus):invalid {
 	box-shadow: inset 0 -2px 0 0 var(--primary-color, #0071AD);
 	opacity: 1;
 }
+/**
+ * Module: Typography Extra
+ */
 
-.tab-panel {
-}
-/* List styles */
+/* Lists
+   ========================================================================== */
 
 ul.list-custom {
 	list-style: var(--type);
@@ -1842,13 +1780,15 @@ ol.list-custom li::before {
 	font-size: 2rem;
 }
 
-/* Censored text */
-.censored, 
+/* Censored text
+   ========================================================================== */
+.censored,
 .censored > * {
 	/* background-color: currentColor; */
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(127,127,127,0.8);
 	color: transparent;
 	cursor: zoom-in;
+	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -1856,11 +1796,15 @@ ol.list-custom li::before {
 	touch-action: manipulation;
 }
 
-.censored:hover, 
-.censored:focus { 
+.censored:hover,
+.censored:focus {
 	background-color: transparent;
 	color: inherit;
-}/* CSS Filters */
+}
+/**
+ * Croissant: CSS filters
+ */
+
 .filter-blur { filter: blur(5.65px); }
 
 .filter-brightness { filter: brightness(150%); }
@@ -1876,8 +1820,12 @@ ol.list-custom li::before {
 .filter-desaturate { filter: saturate(47%); }
 
 .filter-drop-shadow { filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
+/**
+ * Croissant: Images helpers
+ */
 
-/* Helpers resize */
+/* Resize
+   ========================================================================== */
 .is-16x16 {
 	height: 16px;
 	width: 16px;
@@ -1914,11 +1862,39 @@ ol.list-custom li::before {
 	height: 512px;
 	width: 512px;
 }
+
+/* Thumbnail & Avatars
+   ========================================================================== */
+.thumbnail {
+	padding: 0.25rem;
+	background-color: var(--background-color-close, #fff);
+	border: 1px solid var(--background-color-far, #E1E1E1);
+	border-radius: 0.25rem;
+}
+
+/**
+ * Basically, alias to .rounded-circle .thumbnail .square
+ */
+.avatar {
+	border-radius: 50%;
+	object-fit: cover;
+	aspect-ratio: 1;
+	padding: 0.25rem;
+	background-color: var(--background-color-close, #fff);
+}
+/**
+ * Croissant: Typography helpers
+ * Forked from basscss's flexbox module
+ * Licensed MIT (https://github.com/basscss/basscss/blob/master/LICENSE.md)
+ */
+
 .uppercase {  text-transform: uppercase; }
 
- /* When a text is made all capitals, 
-	upper characters are lowercase. 
-	e.g. Mᵐᵉ DE SÉVIGNÉ */
+/**
+ * When a text is made all capitals,
+ * upper characters are lowercase.
+ * e.g. Mᵐᵉ DE SÉVIGNÉ
+ */
 .uppercase sup {  text-transform: lowercase; }
 
 .underline {  text-decoration: underline; }
@@ -1927,11 +1903,12 @@ ol.list-custom li::before {
 .smallcaps {
  	font-variant: small-caps;
 }
-
+/** Old browsers:
+ * text-transform: lowercase;
+ * font-variant: small-caps;
+ */
 .all-small-caps {
-	/* Old browsers */
-	/* text-transform: lowercase; 
- 	font-variant: small-caps; */
+
 	font-variant: all-small-caps;
 }
 
@@ -1953,7 +1930,12 @@ ol.list-custom li::before {
 .font-monospace { font-family: var(--font-monospace); }
 
 .font-system { font-family: var(--font-system); }
-/* Forked from basscss's flexbox module, licensed MIT (https://github.com/basscss/basscss/blob/master/LICENSE.md) */
+/**
+ * Croissant: Flexbox helpers
+ * Forked from basscss's flexbox module
+ * Licensed MIT (https://github.com/basscss/basscss/blob/master/LICENSE.md)
+ */
+
 .flex { display: flex; }
 .flex-auto { flex: 1 1 auto; }
 .flex-none { flex: none; }
@@ -2000,191 +1982,4 @@ ol.list-custom li::before {
 .order-10 { order: 10; }
 .order-11 { order: 11; }
 .order-12 { order: 12; }
-.order-last { order: 99999; }/* Optional */
-.container {
-	width: 100%;
-	padding-right: 1rem;
-	padding-left: 1rem;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.no-gutters.row,
-.no-gutters[class*="row-"] {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.no-gutters.row > *,
-.no-gutters[class*="row-"] > * {
-	padding-right: 0;
-	padding-left: 0;
-}
-
-/* New, greatly inspired by frow https://github.com/Beg-in/frow */
-.row,
-[class*="row-"] {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-left: -1rem;
-	margin-right: -1rem;
-}
-
-.row > *,
-[class*="row-"] > * {
-	max-width: 100%;
-	width: 100%;
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
-/* Override classes */
-@media (min-width: 0px) { /* Mobile XS */
-	.row-xs,
-	[class*="row-xs-"] {
-		justify-content: start; /* Opinionated */
-	}
-	.row-xs > * { 
-		flex: 1 0 auto;
-		width: auto;
-	}
-
-	.row-xs-1 > * { width: 100%; }
-	.row-xs-2 > * { width: 50%; }
-	.row-xs-3 > * { width: 33.33%; }
-	.row-xs-4 > * { width: 25%; }
-	.row-xs-5 > * { width: 20%; }
-	.row-xs-6 > * { width: 16.66%; }
-	.row-xs-7 > * { width: 14.28%; }
-	.row-xs-8 > * { width: 12.5%; }
-	.row-xs-9 > * { width: 11.11%; }
-	.row-xs-10 > * { width: 10%; }
-	.row-xs-11 > * { width: 9.09%; }
-	.row-xs-12 > * { width: 8.33%; }
-
-	.col-xs-1 { width: 8.33%; }
-	.col-xs-2 { width: 16.66%; }
-	.col-xs-3 { width: 25%; }
-	.col-xs-4 { width: 33.33%; }
-	.col-xs-5 { width: 41.66%; }
-	.col-xs-6 { width: 50%; }
-	.col-xs-7 { width: 58.33%; }
-	.col-xs-8 { width: 66.66%; }
-	.col-xs-9 { width: 75%; }
-	.col-xs-10 { width: 83.33%; }
-	.col-xs-11 { width: 91.66%; }
-	.col-xs-12 { width: 100%; }
-}
-
-@media (min-width: 600px) { /* Tablet SM */
-	.row-sm,
-	[class*="row-sm-"] {
-		justify-content: start; /* Opinionated */
-	}
-	.row-sm > * { 
-		flex: 1 0 auto;
-		width: auto;
-	}
-
-	.row-sm-1 > * { width: 100%; }
-	.row-sm-2 > * { width: 50%; }
-	.row-sm-3 > * { width: 33.33%; }
-	.row-sm-4 > * { width: 25%; }
-	.row-sm-5 > * { width: 20%; }
-	.row-sm-6 > * { width: 16.66%; }
-	.row-sm-7 > * { width: 14.28%; }
-	.row-sm-8 > * { width: 12.5%; }
-	.row-sm-9 > * { width: 11.11%; }
-	.row-sm-10 > * { width: 10%; }
-	.row-sm-11 > * { width: 9.09%; }
-	.row-sm-12 > * { width: 8.33%; }
-
-	.col-sm-1 { width: 8.33%; }
-	.col-sm-2 { width: 16.66%; }
-	.col-sm-3 { width: 25%; }
-	.col-sm-4 { width: 33.33%; }
-	.col-sm-5 { width: 41.66%; }
-	.col-sm-6 { width: 50%; }
-	.col-sm-7 { width: 58.33%; }
-	.col-sm-8 { width: 66.66%; }
-	.col-sm-9 { width: 75%; }
-	.col-sm-10 { width: 83.33%; }
-	.col-sm-11 { width: 91.66%; }
-	.col-sm-12 { width: 100%; }
-}
-
-@media (min-width: 900px) { /* Only on desktop by default */
-	.row,
-	[class*="row-"] {
-		justify-content: start; /* Opinionated */
-	}
-	
-	/* Only on unstyled col in unstyled row. 
-	   That way, unstyled col in styled rows will adapt. */
-	.row > *,
-	.row-md > * { 
-		flex: 1 1 auto;
-		width: auto;
-	}
-
-
-	.row-md-1 > *, .row-1 > * { width: 100%; }
-	.row-md-2 > *, .row-2 > * { width: 50%; }
-	.row-md-3 > *, .row-3 > * { width: 33.33%; }
-	.row-md-4 > *, .row-4 > * { width: 25%; }
-	.row-md-5 > *, .row-5 > * { width: 20%; }
-	.row-md-6 > *, .row-6 > * { width: 16.66%; }
-	.row-md-7 > *, .row-7 > * { width: 14.28%; }
-	.row-md-8 > *, .row-8 > * { width: 12.5%; }
-	.row-md-9 > *, .row-9 > * { width: 11.11%; }
-	.row-md-10 > *, .row-10 > * { width: 10%; }
-	.row-md-11 > *, .row-11 > * { width: 9.09%; }
-	.row-md-12 > *, .row-12 > * { width: 8.33%; }
-
-	.col-md-1, .col-1 { width: 8.33%; }
-	.col-md-2, .col-2 { width: 16.66%; }
-	.col-md-3, .col-3 { width: 25%; }
-	.col-md-4, .col-4 { width: 33.33%; }
-	.col-md-5, .col-5 { width: 41.66%; }
-	.col-md-6, .col-6 { width: 50%; }
-	.col-md-7, .col-7 { width: 58.33%; }
-	.col-md-8, .col-8 { width: 66.66%; }
-	.col-md-9, .col-9 { width: 75%; }
-	.col-md-10, .col-10 { width: 83.33%; }
-	.col-md-11, .col-11 { width: 91.66%; }
-	.col-md-12, .col-12 { width: 100%; }
-}
-
-@media (min-width: 1200px) { /* Desktop LG */
-	.row-lg > * { 
-		flex: 1 0 auto;
-		width: auto;
-	}
-
-	.row-lg-1 > * { width: 100%; }
-	.row-lg-2 > * { width: 50%; }
-	.row-lg-3 > * { width: 33.33%; }
-	.row-lg-4 > * { width: 25%; }
-	.row-lg-5 > * { width: 20%; }
-	.row-lg-6 > * { width: 16.66%; }
-	.row-lg-7 > * { width: 14.28%; }
-	.row-lg-8 > * { width: 12.5%; }
-	.row-lg-9 > * { width: 11.11%; }
-	.row-lg-10 > * { width: 10%; }
-	.row-lg-11 > * { width: 9.09%; }
-	.row-lg-12 > * { width: 8.33%; }
-
-	.col-lg-1 { width: 8.33%; }
-	.col-lg-2 { width: 16.66%; }
-	.col-lg-3 { width: 25%; }
-	.col-lg-4 { width: 33.33%; }
-	.col-lg-5 { width: 41.66%; }
-	.col-lg-6 { width: 50%; }
-	.col-lg-7 { width: 58.33%; }
-	.col-lg-8 { width: 66.66%; }
-	.col-lg-9 { width: 75%; }
-	.col-lg-10 { width: 83.33%; }
-	.col-lg-11 { width: 91.66%; }
-	.col-lg-12 { width: 100%; }
-}
+.order-last { order: 99999; }
