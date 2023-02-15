@@ -1,0 +1,28 @@
+/* Navbar burger alternate
+   ========================================================================== */
+
+/* Dots */
+/* .burger--dots */
+
+@media screen and (min-width: 44em) {
+	.desktop-only.burger--dots .navbar-burger-bun,
+	.desktop-only.burger--dots .navbar-burger-bun::before,
+	.desktop-only.burger--dots .navbar-burger-bun::after {
+		width: 0.187rem; /* height / 8 */
+		height: 0.187rem; /* height / 8 */
+		border-radius: 3px;
+		display: inline-block;
+	}
+}
+
+/* Arrow left */
+
+/* Arrow right */
+
+/* Arrow top */
+
+/* Arrow bottom */
+
+/* Plus */
+
+/* Minus */

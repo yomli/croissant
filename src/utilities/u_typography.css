@@ -1,8 +1,16 @@
+/**
+ * Croissant: Typography helpers
+ * Forked from basscss's flexbox module
+ * Licensed MIT (https://github.com/basscss/basscss/blob/master/LICENSE.md)
+ */
+
 .uppercase {  text-transform: uppercase; }
 
- /* When a text is made all capitals, 
-	upper characters are lowercase. 
-	e.g. Mᵐᵉ DE SÉVIGNÉ */
+/**
+ * When a text is made all capitals,
+ * upper characters are lowercase.
+ * e.g. Mᵐᵉ DE SÉVIGNÉ
+ */
 .uppercase sup {  text-transform: lowercase; }
 
 .underline {  text-decoration: underline; }
@@ -11,11 +19,12 @@
 .smallcaps {
  	font-variant: small-caps;
 }
-
+/** Old browsers:
+ * text-transform: lowercase;
+ * font-variant: small-caps;
+ */
 .all-small-caps {
-	/* Old browsers */
-	/* text-transform: lowercase; 
- 	font-variant: small-caps; */
+
 	font-variant: all-small-caps;
 }
 

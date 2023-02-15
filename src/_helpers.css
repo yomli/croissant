@@ -1,17 +1,24 @@
-/* Utilities */
+/**
+ * Croissant: Helpers
+ */
 
-.inline-block { 
-	display: inline-block; 
+/* Blocks
+   ========================================================================== */
+
+.block {
+	display: block;
 }
 
-.inline-block:not(:last-child) { /* For lists, needs to be tested */
-	margin-right: 0.5rem;
-	color: lightgray;
+.inline-block {
+	display: inline-block;
 }
+
+/* Float
+   ========================================================================== */
 
 .clearfix::after {
 	clear: both;
-	content: ' ';
+	content: " ";
 	display: table;
 }
 
@@ -23,10 +30,13 @@
 	float: right;
 }
 
-.square {
+/* Shapes
+   ========================================================================== */
+
+[height].square,
+[width].square {
 	object-fit: cover;
-	height: var(--width, 512px);
-	width: var(--width, 512px);
+	aspect-ratio: 1;
 }
 
 .rounded {
@@ -34,21 +44,24 @@
 }
 
 .rounded-circle {
-	border-radius: 100% !important;
+	border-radius: 50% !important;
 }
 
 .rounded-pill {
-	border-radius: 999em !important;
+	border-radius: 50rem !important;
 }
 
-.avatar { /* Basically, alias to .rounded-circle .thumbnail .square */
-	border-radius: 100%;
-	object-fit: cover;
-	height: var(--width, 512px);
-	width: var(--width, 512px);
-	padding: 0.25rem;
-	background-color: var(--background-color-close, #FFFFFF);
-	/*border: 1px solid var(--background-color-far, #E1E1E1);*/
+/* Shadows
+   ========================================================================== */
+
+.card {
+	border-radius: 0.25rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.card.is-background {
+	background: rgba(127,127,127,0.05);
 }
 
 .card,
@@ -69,11 +82,6 @@
 	box-shadow: none;
 }
 
-.card {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
 .animated-raised:hover,
 .animated-raised:focus {
 	position: relative;
@@ -85,7 +93,12 @@
 	top: 0;
 }
 
-/* Stretched link, must be in relative parent */
+/* Misc
+   ========================================================================== */
+
+/**
+ * Stretched link, must be in relative parent
+ */
 .stretched-link::after {
 	position: absolute;
 	top: 0;
@@ -96,13 +109,13 @@
 	content: "";
 }
 
+/**
+ * As of 02/2023, we still have to do this -_-
+ */
 .no-select {
-	/* As of 02/2023, we still have to do this */
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently
-						  supported by Chrome and Opera */
+	user-select: none;
 }

@@ -1,0 +1,57 @@
+/**
+ * Module: Forms with floating labels
+
+   Usage:
+   <label class="floating-label">
+		<input type="text" placeholder=" ">
+		<span class="floating-label-text">Some text</span>
+   </label>
+ */
+
+.floating-label :where(input,textarea) {
+	display: block !important;
+}
+
+.floating-label {
+	position: relative;
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.floating-label :where(input,textarea):placeholder-shown + .floating-label-text {
+	position: absolute;
+	top: 0.75rem;
+	left: 1rem;
+	opacity: 0.5;
+	transition: all 0.3s ease-in-out;
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown) + .floating-label-text {
+	position: absolute;
+	top: -0.75rem;
+	color: currentColor;
+	font-size: 0.8rem;
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown):focus + .floating-label-text {
+	color: var(--primary-color, #0071AD);
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown):not(:focus):invalid + .floating-label-text {
+	color: var(--danger-color, #DE2A2A);
+}
+
+.floating-label .floating-label-error {
+	position: absolute;
+    bottom: -0.75rem;
+	opacity: 0;
+	color: var(--danger-color, #DE2A2A);
+	transition: all 0.3s ease-in-out;
+	font-size: 0.8rem;
+}
+
+.floating-label :where(input,textarea):not(:placeholder-shown):not(:focus):invalid ~ .floating-label-error {
+	opacity: 1;
+}

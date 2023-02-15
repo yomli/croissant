@@ -1,3 +1,15 @@
+/* Module: Tabs
+
+   <div class="tabs">
+		<input id="tab-1" name="tabs" class="tab-input" checked="checked" type="radio">
+		<label for="tab-1" class="tab" role="tab" aria-selected="false" aria-controls="tab-panel-1" aria-expanded="false" tabindex="0">Tab title</label>
+		<section class="tab-panel" id="tab-panel-1" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+			...
+		</section>
+   </div>
+
+   ========================================================================== */
+
 .tabs {
 	width: 100%;
 	display: flex;

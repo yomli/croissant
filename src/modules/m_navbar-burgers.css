@@ -1,4 +1,7 @@
-input[type="checkbox"].navbar-burger {
+/* Navbar burger
+   ========================================================================== */
+
+[type="checkbox"].navbar-burger {
 	position: absolute;
 	left: -200vw;
 	opacity: 0;
@@ -9,11 +12,9 @@ input[type="checkbox"].navbar-burger {
 	flex-direction: column;
 	justify-content: center;
 	order: 9999;
-	/*margin: 1rem;*/
 	width: 1.5rem;
 	height: 1.5rem;
 	padding: 0;
-	/* outline: 0 !important; */
 	border: 0;
 	cursor: pointer;
 	-webkit-tap-highlight-color: transparent;
@@ -33,7 +34,7 @@ input[type="checkbox"].navbar-burger {
 	width: 100%;
 	height: 0.187rem; /* height / 8 */
 	border-radius: 3px;
-	display: inline-block;	
+	display: inline-block;
 	background: currentColor;
 }
 
@@ -76,29 +77,3 @@ input[type="checkbox"].navbar-burger {
 .navbar-burger:focus .navbar-burger-bun::after {
 	transform: translate3d(0,-50%,0) rotate3d(0,0,1,-45deg);
 }
-
-/* Dots */
-/* .burger--dots */
-
-@media screen and (min-width: 44em) {
-	.desktop-only.burger--dots .navbar-burger-bun,
-	.desktop-only.burger--dots .navbar-burger-bun::before,
-	.desktop-only.burger--dots .navbar-burger-bun::after {
-		width: 0.187rem; /* height / 8 */
-		height: 0.187rem; /* height / 8 */
-		border-radius: 3px;
-		display: inline-block;	
-	}
-}
-
-/* Arrow left */
-
-/* Arrow right */
-
-/* Arrow top */
-
-/* Arrow bottom */
-
-/* Plus */
-
-/* Minus */

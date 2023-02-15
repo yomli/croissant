@@ -2,10 +2,9 @@
  * Croissant
  * Licensed MIT (https://github.com/yomli/croissant/blob/main/LICENSE)
  */
-:root {
-	color-scheme: light dark;
 
-	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+:root {
+	--font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 	--font-system: var(--font-sans);
 	--font-serif:  Georgia, Times, "Times New Roman", serif;
 	--font-monospace: "Source Code Pro", "Roboto Mono", Cousine, Menlo, Consolas, Courier, monospace;
@@ -16,7 +15,7 @@
 /* Automatic/Manual light mode */
 :root,
 :root .color-scheme-light {
-	--background-color: #FAFAFA;
+	--background-color: #F4F4F4;
 	--main-color: rgba(0,0,0,0.8);
 
 	/* Shades */
@@ -24,20 +23,16 @@
 	--background-color-close: #FFFFFF;
 
 	/* Color safe on white */
-	--blue-color: #0071AD;
+	--blue-color: #0069A2;
 	--yellow-color: #FFC200; /* Do not use with text */
+	--purple-color: #A22274;
 	--red-color: #DE2A2A;
 	--orange-color: #C44F0C;
 	--green-color: #41814F;
 
-	/* Elements colors */
-	--button-color: #E1E1E1;
-	--mark-color: #FCF8E3;
-	--kbd-background-color: #F7F7F7;
-
 	/* Palette */
 	--primary-color: var(--blue-color);
-	--accent-color: var(--yellow-color); /* Do not use with text */
+	--accent-color: var(--purple-color);
 	--danger-color: var(--red-color);
 	--alert-color: var(--orange-color);
 	--success-color: var(--green-color);
@@ -55,23 +50,12 @@
 		--background-color-close: #1E1E1E;
 
 		/* Color safe on black */
-		--blue-color: #36A2FF;
+		--blue-color: #008CD6;
 		--yellow-color: #FFC200;
+		--purple-color: #9F70CF;
 		--red-color: #F03331;
 		--orange-color: #F27D1F;
 		--green-color: #4B955E;
-
-		/* Elements colors */
-		--button-color: #070B0E;
-		--mark-color: #FFF0A3;
-		--kbd-background-color: #040607;
-
-		/* Palette */
-		--primary-color: var(--blue-color);
-		--accent-color: var(--yellow-color); /* Do not use with text */
-		--danger-color: var(--red-color);
-		--alert-color: var(--orange-color);
-		--success-color: var(--green-color);
 
 		/* Image recolorization */
 		--image-filter: grayscale(25%);
@@ -89,23 +73,12 @@
 	--background-color-close: #1E1E1E;
 
 	/* Color safe on black */
-	--blue-color: #36A2FF;
+	--blue-color: #008CD6;
 	--yellow-color: #FFC200;
+	--purple-color: #9F70CF;
 	--red-color: #F03331;
 	--orange-color: #F27D1F;
 	--green-color: #4B955E;
-
-	/* Elements colors */
-	--button-color: #070B0E;
-	--mark-color: #FFF0A3;
-	--kbd-background-color: #040607;
-
-	/* Palette */
-	--primary-color: var(--blue-color);
-	--accent-color: var(--yellow-color);
-	--danger-color: var(--red-color);
-	--alert-color: var(--orange-color);
-	--success-color: var(--green-color);
 
 	/* Image recolorization */
 	--image-filter: grayscale(25%);

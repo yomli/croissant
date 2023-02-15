@@ -1,0 +1,19 @@
+/**
+ * Croissant: CSS filters
+ */
+
+.filter-blur { filter: blur(5.65px); }
+
+.filter-brightness { filter: brightness(150%); }
+
+.filter-contrast { filter: contrast(150%); }
+
+.filter-invert { filter: invert(100%); }
+
+.filter-sepia { filter: sepia(100%); }
+
+.filter-grayscale { filter: grayscale(100%); }
+
+.filter-desaturate { filter: saturate(47%); }
+
+.filter-drop-shadow { filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }

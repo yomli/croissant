@@ -1,16 +1,19 @@
+/**
+ * Module: Forms
+ */
+
 input,
 textarea,
 select {
 	-moz-appearance: none !important;
 	-webkit-appearance: none !important;
 	appearance: none !important;
-	-ms-touch-action: manipulation;
 	touch-action: manipulation;
-	display: block;
+	display: inline-block;
 	width: 100%;
 	height: 2rem;
 	line-height: 2rem;
-	padding: 0 1rem;
+	padding: 0 0.5rem;
 	margin: 0.5rem 0;
 }
 
@@ -25,172 +28,74 @@ textarea {
 	width: auto;
 }
 
-[type="file"],
-[type="color"],
-[type="image"],
-[type="range"] {
-	border: none;
-	border-bottom: none; /* Firefox bug with range */
-	cursor: pointer;
-}
-
 [type="checkbox"],
-[type="radio"] { /* Reminder: https://coderwall.com/p/a7tbrq/protip-if-you-want-to-style-checkboxes-radio-buttons-or-select-menus-in-firefox-don-t-bother */
+[type="radio"] {
 	height: 1.25rem;
 	width: 1.25rem;
 	padding: 0;
 	margin: 0.5rem;
 	vertical-align: -0.75rem; /* - (margin + (height - 1rem)) */
-	/*background: inherit;*/
 	position: relative;
-	background: none !important;
+	cursor: pointer;
 	border: none !important;
 	box-shadow: none !important;
-	display: inline-block;
-	cursor: pointer;
 	outline: none !important;
+	background: transparent;
 }
 
-/* Skin */
+[type="file"],
+[type="color"],
+[type="image"],
+[type="range"] {
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+/* Form skin
+   ========================================================================== */
 input,
 textarea,
 select {
 	color: currentColor;
-	/*background-color: transparent;*/
-	background-color: var(--background-color-close, #FFFFFF);
-	background-clip: padding-box;
-	border: 1px solid rgba(125,125,125,0.3);
-	border-radius: 3px;
+	background-color: var(--background-color-close, #fff);
+	border: 1px solid rgba(127,127,127,0.25);
+	border-radius: 0.25rem;
 	transition: border-color 0.20s ease-in-out, box-shadow 0.20s ease-in-out;
 }
 
-input::placeholder,
-textarea::placeholder,
-select::placeholder {
+::placeholder {
 	opacity: 0.6;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+:where(input,textarea,select):focus {
 	outline: none;
 	border-color: var(--primary-color, #0071AD);
 	box-shadow: 0 0 0 1px var(--primary-color, #0071AD) inset;
 }
 
-input:disabled,
-textarea:disabled,
-select:disabled {
-	background-color: rgba(125,125,125,0.1);
+:where(input,textarea,select):disabled {
+	background-color: rgba(127,127,127,0.1);
 	color: currentColor;
 	cursor: default;
 }
 
-input:required,
-textarea:required,
-select:required {
+:where(input,textarea,select):required {
 	border-color: initial;
 	box-shadow: none;
 }
 
-input:not(:focus):invalid,
-textarea:not(:focus):invalid,
-select:not(:focus):invalid {
+:where(input,textarea,select):not(:focus):invalid {
 	border-color: var(--danger-color, #DE2A2A);
 	box-shadow: 0 0 0 1px var(--danger-color, #DE2A2A) inset;
 }
 
-/* ===============================
-	      Alternate input
-   =============================== */
+/* Checkboxes and radio buttons
+   ========================================================================== */
 
-.input-alternate {
-	border-color: transparent;
-	border-bottom-color: rgba(125,125,125,0.3);
-	border-radius: 0 !important;
-	background: transparent no-repeat;
-	background-image: linear-gradient(to bottom, var(--primary-color, #0071AD), var(--primary-color, #0071AD));
-	background-size: 0 2px;
-	background-position: 50% 100%;
-	transition: border-bottom-color 0.25s ease-in-out, background-size 0.25s ease-in-out;
-}
-
-.input-alternate:focus {
-	border-color: transparent;
-	border-bottom-color: transparent;
-	box-shadow: none !important;
-	background-size: 100% 2px;
-}
-
-.input-alternate:not(:focus):invalid {
-	border-color: transparent;
-	box-shadow: none !important;
-	border-bottom-color: transparent;
-	background-image: linear-gradient(to bottom, var(--danger-color, #DE2A2A), var(--danger-color, #DE2A2A));
-	background-size: 100% 2px;
-}
-
-/* ===============================
-	      Floating labels
-   =============================== */
-.floating-label {
-	position: relative;
-	width: 100%;
-	margin-top: 1rem;
-}
-
-.floating-label input:placeholder-shown + .floating-label-text,
-.floating-label textarea:placeholder-shown + .floating-label-text {
-	position: absolute;
-	top: 0.75rem;
-	left: 1rem;
-	opacity: 0.5;
-	transition: all 0.3s ease-in-out;
-}
-
-.floating-label input:not(:placeholder-shown) + .floating-label-text,
-.floating-label textarea:not(:placeholder-shown) + .floating-label-text {
-	position: absolute;
-	top: -0.75rem;
-	color: currentColor;
-	font-size: 0.8rem;
-	opacity: 1;
-	transition: all 0.3s ease-in-out;
-}
-
-.floating-label input:not(:placeholder-shown):focus + .floating-label-text,
-.floating-label textarea:not(:placeholder-shown):focus + .floating-label-text {
-	color: var(--primary-color, #0071AD);
-}
-
-.floating-label input:not(:placeholder-shown):not(:focus):invalid + .floating-label-text,
-.floating-label textarea:not(:placeholder-shown):not(:focus):invalid + .floating-label-text {
-	color: var(--danger-color, #DE2A2A);
-}
-
-.floating-label .floating-label-error,
-.floating-label .floating-label-error {
-	position: absolute;
-    bottom: -0.75rem;
-	opacity: 0;
-	color: var(--danger-color, #DE2A2A);
-	transition: all 0.3s ease-in-out;
-	font-size: 0.8rem;
-}
-
-.floating-label input:not(:placeholder-shown):not(:focus):invalid ~ .floating-label-error,
-.floating-label textarea:not(:placeholder-shown):not(:focus):invalid ~ .floating-label-error {
-	opacity: 1;
-}
-
-/* ===============================
-	Checkboxes and radio buttons
-   =============================== */
-
-[type="checkbox"]::before,
-[type="radio"]::before,
-[type="checkbox"]::after,
-[type="radio"]::after {
+:where([type="checkbox"],[type="radio"])::before,
+:where([type="checkbox"],[type="radio"])::after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -202,7 +107,7 @@ select:not(:focus):invalid {
 
 /* Radio buttons */
 [type="radio"]::before {
-	border: 2px solid rgba(125,125,125,1);
+	border: 2px solid rgb(127,127,127);
 	border-radius: 50%;
 }
 
@@ -225,8 +130,8 @@ select:not(:focus):invalid {
 
 /* Checkboxes */
 [type="checkbox"]::after {
-	border: 2px solid rgba(125,125,125,1);
-	border-radius: 3px;
+	border: 2px solid rgb(127,127,127);
+	border-radius: 0.25rem;
 	background-color: transparent;
 }
 
@@ -247,7 +152,7 @@ select:not(:focus):invalid {
 }
 
 [type="checkbox"]:not(.checkbox--alt):checked::before {
-	border-color: #FFFFFF;
+	border-color: #fff;
 }
 
 /* Alternative .checkbox--alt checkboxes */
@@ -274,7 +179,7 @@ select:not(:focus):invalid {
 	-moz-appearance: none !important;
 	appearance: none !important;
 	user-select: none;
-	-webkit-tap-highlight-color:transparent;
+	-webkit-tap-highlight-color: transparent;
 	cursor: pointer;
 	display: inline-block;
 	color: transparent;
@@ -289,7 +194,7 @@ select:not(:focus):invalid {
 	width: 2.5rem;
 	height: 1.25rem;
 	border-radius: 100px;
-	background-color: #AAAAAA;
+	background-color: #aaa;
 	opacity: 0.5;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.3) inset;
 	border:none !important;
@@ -315,7 +220,7 @@ select:not(:focus):invalid {
 }
 
 .switch::before {
-	background-color: #FFFFFF;
+	background-color: #fff;
 }
 
 .switch:checked::before,
@@ -324,7 +229,7 @@ select:not(:focus):invalid {
 }
 
 .switch:disabled::after {
-	background-color: #AAAAAA;
+	background-color: #aaa;
 	opacity: 0.3;
 }
 
@@ -333,9 +238,8 @@ select:not(:focus):invalid {
 	opacity: 1;
 }
 
-/* ===============================
-	            Colors
-   =============================== */
+/* Colors
+   ========================================================================== */
 .is-primary:checked::before {
 	border-color: var(--primary-color, #0071AD);
 }
